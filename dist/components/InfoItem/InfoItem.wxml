@@ -1,0 +1,20 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="infoItem" hover-class="infoHover">
+        <view class="infoLeft">
+            <block wx:if="{{infoItem.icon}}">
+                <image class="icon" src="{{infoItem.icon}}"></image>
+            </block>
+            <block wx:if="{{infoItem.title}}">
+                <view class="title">{{infoItem.title}}</view>
+            </block>
+        </view>
+        <view class="infoRight">
+            <block wx:if="{{infoItem.value}}">
+                <view class="value">{{infoItem.value}}</view>
+            </block>
+            <block wx:if="{{infoItem.iconArr}}">
+                <image class="iconArr" src="{{infoItem.iconArr}}"></image>
+            </block>
+        </view>
+    </view>
+</block>

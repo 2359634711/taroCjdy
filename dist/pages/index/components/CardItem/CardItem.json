@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "info-item": "../../../../components/InfoItem/InfoItem"
+  }
+}

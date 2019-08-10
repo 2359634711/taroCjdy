@@ -1,0 +1,42 @@
+.searchBar{
+    position: fixed;
+    top: 12%;
+    width: 100%;
+}
+.searchBtn{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 100% 100% 0;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px #ccc;
+
+}
+.searchBtn Image{
+    width: 56px;
+    height: 56px;
+}
+
+.inputBox{
+    border-radius: 100px;
+    height: 80px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px #ccc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 10px;
+}
+.inputBox Image{
+    width: 56px;
+    height: 56px;
+    margin: 0 20px;
+
+}
+.inputBox Input{
+    flex-grow: 1;
+    font-size: 28px;
+}

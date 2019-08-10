@@ -1,0 +1,11 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="CardItem">
+        <view class="title fontTitle">食堂</view>
+        <view class="infoList">
+            <info-item compid="{{$compid__0}}"></info-item>
+            <info-item compid="{{$compid__1}}"></info-item>
+            <info-item compid="{{$compid__2}}"></info-item>
+            <info-item compid="{{$compid__3}}"></info-item>
+        </view>
+    </view>
+</block>

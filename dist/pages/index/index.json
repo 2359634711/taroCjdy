@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "search-bar": "../../components/SearchBar/SearchBar",
+    "map-item": "../../components/MapItem/MapItem",
+    "main-box": "./components/MainBox/MainBox"
+  },
+  "navigationBarTitleText": "首页",
+  "navigationStyle": "custom"
+}

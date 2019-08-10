@@ -1,0 +1,5 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="mapBox">
+        <map longitude="{{113}}" latitude="{{23}}"></map>
+    </view>
+</block>
