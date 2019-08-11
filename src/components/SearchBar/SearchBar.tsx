@@ -23,6 +23,7 @@ export default class SearchBar extends Component<IProps, any> {
                 </View>
             )
         } else {
+            let a = 'asd'
             searchBar = (
 
                 <View onClick={() => {
