@@ -1,8 +1,8 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="CardItem">
-        <view class="title fontTitle">食堂</view>
+        <view class="title fontTitle">{{cardInfo.className}}</view>
         <view class="infoList">
-            <info-item wx:key="$original.id" wx:for="{{loopArray0}}" wx:for-item="val" wx:for-index="__index0" compid="{{val.$compid__3}}"></info-item>
+            <info-item wx:key="$original.id" wx:for="{{loopArray28}}" wx:for-item="val" wx:for-index="__index0" compid="{{val.$compid__73}}"></info-item>
         </view>
     </view>
 </block>

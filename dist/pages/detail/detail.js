@@ -36,7 +36,7 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__5", "referInfo"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__2", "referInfo"], _this.config = {
       navigationBarTitleText: '详情'
     }, _this.customComponents = ["InfoBox", "ReferBox", "RichDetail"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -87,7 +87,7 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__5 = (0, _index.genCompid)(__prefix + "$compid__5");
+      var $compid__2 = (0, _index.genCompid)(__prefix + "$compid__2");
 
       var referInfo = this.__state.referInfo;
       var anonymousState__temp = "/res/icon/swiper1.jpg";
@@ -95,12 +95,12 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       var anonymousState__temp3 = "/res/icon/swiper3.jpg";
       _index.propsManager.set({
         "referInfo": referInfo
-      }, $compid__5);
+      }, $compid__2);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        $compid__5: $compid__5
+        $compid__2: $compid__2
       });
       return this.__state;
     }

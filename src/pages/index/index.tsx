@@ -3,16 +3,17 @@ import { View } from '@tarojs/components'
 import MapItem from '../../components/MapItem/MapItem'
 import MainBox from './components/MainBox/MainBox'
 import SearchBar from '../../components/SearchBar/SearchBar'
-import CardItem from './components/CardItem/CardItem'
+import CardItem, { ICardInfo } from './components/CardItem/CardItem'
+const { getGoodsTitle } = require('../../utils/api')
 
 interface IState {
   sceenHeight: number,
   scrollFlag: boolean,
-  showType: number
+  showType: number,
+  goodTitle: ICardInfo[]
 }
 
 export default class Index extends Component<any, IState> {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -36,6 +37,13 @@ export default class Index extends Component<any, IState> {
           showType: 0
         })
       }
+    })
+
+    getGoodsTitle().then(res => {
+      console.log(res)
+      this.setState({
+        goodTitle: res.data
+      })
     })
   }
 
@@ -77,7 +85,10 @@ export default class Index extends Component<any, IState> {
         <SearchBar showType={showType} onAction={(e) => this.onSearchBarAction(e)} />
         <MapItem />
         <MainBox >
-          <CardItem onAction={this.onCardAction.bind(this)} />
+          {this.state.goodTitle.map(val => (
+            <CardItem key={val.classId} cardInfo={val} onAction={this.onCardAction.bind(this)} />
+          ))}
+
         </MainBox>
       </View>
     )

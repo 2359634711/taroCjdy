@@ -36,14 +36,14 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray0", "infoList", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray28", "cardInfo", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CardItem, [{
     key: "_constructor",
     value: function _constructor(props) {
       _get(CardItem.prototype.__proto__ || Object.getPrototypeOf(CardItem.prototype), "_constructor", this).call(this, props);
-
+      this.state = this.props;
       this.$$refs = [];
     }
   }, {
@@ -57,29 +57,18 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var infoList = [{
-        id: 0,
-        title: '一食堂',
-        value: '二号门，厚德学区附近'
-      }, {
-        id: 1,
-        title: '一食堂',
-        value: '二号门，厚德学区附近'
-      }, {
-        id: 2,
-        title: '一食堂',
-        value: '二号门，厚德学区附近'
-      }, {
-        id: 3,
-        title: '一食堂',
-        value: '二号门，厚德学区附近'
-      }];
-      var loopArray0 = infoList.map(function (val, __index0) {
+      var loopArray28 = this.__state.cardInfo.list.map(function (val, __index0) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
 
-        var _$indexKey = "Suffz" + __index0;
+        var infoItem = {
+          id: val.$original.id,
+          title: val.$original.title,
+          value: val.$original.info
+        };
+
+        var _$indexKey = "PjTdR" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function (e) {
           _this2.__props.onAction({
@@ -88,20 +77,21 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           });
         };
 
-        var $compid__3 = (0, _index.genCompid)(__prefix + "wsEniqqfAx" + __index0);
+        var $compid__73 = (0, _index.genCompid)(__prefix + "FXYpYrodrv" + __index0);
         _index.propsManager.set({
-          "infoItem": val.$original,
+          "infoItem": infoItem,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
-        }, $compid__3);
+        }, $compid__73);
         return {
+          infoItem: infoItem,
           _$indexKey: _$indexKey,
-          $compid__3: $compid__3,
+          $compid__73: $compid__73,
           $original: val.$original
         };
       });
+
       Object.assign(this.__state, {
-        loopArray0: loopArray0,
-        infoList: infoList
+        loopArray28: loopArray28
       });
       return this.__state;
     }

@@ -1,48 +1,58 @@
 import { Component } from "@tarojs/taro";
 import { View } from "@tarojs/components";
-import InfoItem from "../../../../components/InfoItem/InfoItem"
+import InfoItem, { IInfoItem } from "../../../../components/InfoItem/InfoItem"
 import './CardItem.scss'
 import '../../../../commonStyles/font.scss'
 
 interface IProps {
-    onAction: Function
+    onAction: Function,
+    cardInfo: ICardInfo
 }
-export default class CardItem extends Component<IProps, any> {
-
-
-
+export interface ICardInfo {
+    classId: number,
+    className: string,
+    list: IGoodTitle[]
+}
+export interface IGoodTitle {
+    id: number,
+    title: string,
+    info: string,
+    lagtitude?: string,
+    longtitude?: string
+}
+interface IState {
+    cardInfo: {
+        classId: number,
+        className: string,
+        list: IGoodTitle[]
+    }
+}
+export default class CardItem extends Component<IProps, IState> {
+    constructor(props) {
+        super(props);
+        this.state = this.props
+    }
     render() {
-        let infoList = [
-            {
-                id: 0,
-                title: '一食堂',
-                value: '二号门，厚德学区附近'
-            }, {
-                id: 1,
-                title: '一食堂',
-                value: '二号门，厚德学区附近'
-            }, {
-                id: 2,
-                title: '一食堂',
-                value: '二号门，厚德学区附近'
-            }, {
-                id: 3,
-                title: '一食堂',
-                value: '二号门，厚德学区附近'
-            }
-        ]
+
         return (
             <View className='CardItem'>
-                <View className='title fontTitle'>食堂</View>
+                <View className='title fontTitle'>{this.state.cardInfo.className}</View>
                 <View className='infoList'>
-                    {infoList.map(val => (
-                        <InfoItem key={val.id} infoItem={val} onClick={(e) => {
+                    {this.state.cardInfo.list.map(val => {
+                        let infoItem: IInfoItem = {
+                            id: val.id,
+                            title: val.title,
+                            value: val.info
+                        }
+                        return <InfoItem key={val.id} infoItem={infoItem} onClick={(e) => {
                             this.props.onAction({
                                 type: 'onClick',
                                 data: e
                             })
                         }} />
-                    ))}
+                    }
+
+                    )}
                 </View>
             </View>
         )

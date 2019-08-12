@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var taro = require("../npm/@tarojs/taro/index.js");
+var taro = require("../../taro/index.js");
 
 /* eslint-disable */
 var objectIs = Object.is || function (x, y) {

@@ -22,6 +22,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _require = require("../../utils/api.js"),
+    getGoodsTitle = _require.getGoodsTitle;
+
 var Index = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Index, _BaseComponent);
 
@@ -36,7 +39,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__0", "$compid__1"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray25", "$compid__70", "goodTitle"], _this.config = {
       navigationBarTitleText: '首页',
       navigationStyle: 'custom'
     }, _this.customComponents = ["SearchBar", "MapItem", "MainBox", "CardItem"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -70,6 +73,12 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
             showType: 0
           });
         }
+      });
+      getGoodsTitle().then(function (res) {
+        console.log(res);
+        _this2.setState({
+          goodTitle: res.data
+        });
       });
     }
   }, {
@@ -122,8 +131,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
-      var $compid__1 = (0, _index.genCompid)(__prefix + "$compid__1");
+      var $compid__70 = (0, _index.genCompid)(__prefix + "$compid__70");
 
       var showType = this.__state.showType;
 
@@ -131,16 +139,28 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         return _this3.onSearchBarAction(e);
       };
 
+      var loopArray25 = this.__state.goodTitle.map(function (val, _anonIdx) {
+        val = {
+          $original: (0, _index.internal_get_original)(val)
+        };
+        var $compid__69 = (0, _index.genCompid)(__prefix + "tJUnEntCLu" + _anonIdx);
+        _index.propsManager.set({
+          "cardInfo": val.$original,
+          "onAction": _this3.onCardAction.bind(_this3)
+        }, $compid__69);
+        return {
+          $compid__69: $compid__69,
+          $original: val.$original
+        };
+      });
+
       _index.propsManager.set({
         "showType": showType,
         "onAction": this.anonymousFunc0
-      }, $compid__0);
-      _index.propsManager.set({
-        "onAction": this.onCardAction.bind(this)
-      }, $compid__1);
+      }, $compid__70);
       Object.assign(this.__state, {
-        $compid__0: $compid__0,
-        $compid__1: $compid__1
+        loopArray25: loopArray25,
+        $compid__70: $compid__70
       });
       return this.__state;
     }
