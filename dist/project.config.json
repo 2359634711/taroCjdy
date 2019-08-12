@@ -1,7 +1,7 @@
 {
 	"projectname": "myApp",
 	"description": "东油周边",
-	"appid": "wx1fd87268bdcc4ea0",
+	"appid": "touristappid",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

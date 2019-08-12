@@ -36,7 +36,7 @@ var MainBox = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MainBox.__proto__ || Object.getPrototypeOf(MainBox)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["maxHeight"], _this.customComponents = ["CardItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MainBox.__proto__ || Object.getPrototypeOf(MainBox)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["maxHeight", "children"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(MainBox, [{

@@ -1,7 +1,11 @@
 .searchBar{
     position: fixed;
-    top: 12%;
-    width: 100%;
+    top: 0;
+    background: rgba(255,255,255,0);
+    padding-top: 180px;
+    width: 100px;
+    transition: all 0.2s;
+    z-index: 1;
 }
 .searchBtn{
     width: 80px;
@@ -39,4 +43,11 @@
 .inputBox Input{
     flex-grow: 1;
     font-size: 28px;
+}
+
+.title{
+    position: fixed;
+    top: 80px;
+    text-align: center;
+    width: 100%;
 }

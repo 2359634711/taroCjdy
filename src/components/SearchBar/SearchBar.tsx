@@ -1,6 +1,7 @@
 import { Component } from "@tarojs/taro";
 import { View, Image, Input } from "@tarojs/components";
 import './SearchBar.scss'
+import '../../commonStyles/font.scss'
 
 interface IProps {
     showType: number,//0是浮动按钮 1是条形搜索框
@@ -23,9 +24,7 @@ export default class SearchBar extends Component<IProps, any> {
                 </View>
             )
         } else {
-            let a = 'asd'
             searchBar = (
-
                 <View onClick={() => {
                     this.props.onAction({
                         type: 'open',
@@ -37,8 +36,13 @@ export default class SearchBar extends Component<IProps, any> {
                 </View>
             )
         }
+
+        let title = (
+            <View className='title fontTitle'>搜索</View>
+        )
         return (
-            <View className='searchBar'>
+            <View className='searchBar' style={this.props.showType == 1 ? 'width: 100%;background:#fff;': ''}>
+                {this.props.showType == 1 && title}
                 {searchBar}
             </View>
         )

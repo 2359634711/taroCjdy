@@ -1,7 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="mainBox" style="{{'max-height:' + maxHeight + 'px;overflow:hidden;'}}">
-        <card-item></card-item>
-        <card-item></card-item>
-        <card-item></card-item>
+        <slot></slot>
     </view>
 </block>

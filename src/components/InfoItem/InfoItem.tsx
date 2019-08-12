@@ -1,7 +1,6 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, Image } from "@tarojs/components";
 import "./InfoItem.scss"
-
 export interface IInfoItem {
     id: number,
     title: string,
@@ -10,7 +9,9 @@ export interface IInfoItem {
     iconArr?: string
 }
 interface IProps {
-    infoItem: IInfoItem
+    infoItem: IInfoItem,
+    onClick?: Function
+
 }
 
 
@@ -18,7 +19,9 @@ export default class InfoItem extends Component<IProps, any> {
     render() {
         let infoItem = this.props.infoItem
         return (
-            <View className='infoItem' hoverClass='infoHover'>
+            <View className='infoItem' hoverClass='infoHover' onClick={() =>
+                this.props.onClick && this.props.onClick(infoItem)
+            }>
                 <View className='infoLeft'>
                     {infoItem.icon && <Image className='icon' src={infoItem.icon}></Image>}
                     {infoItem.title && <View className='title'>{infoItem.title}</View>}

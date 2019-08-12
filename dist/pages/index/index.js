@@ -36,10 +36,10 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "$compid__26", "$compid__27", "sceenHeight"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__0", "$compid__1"], _this.config = {
       navigationBarTitleText: '首页',
       navigationStyle: 'custom'
-    }, _this.customComponents = ["SearchBar", "MapItem", "MainBox"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.customComponents = ["SearchBar", "MapItem", "MainBox", "CardItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -85,7 +85,13 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     key: "onPageScroll",
     value: function onPageScroll(e) {
       if (e.scrollTop > this.state.sceenHeight * 0.75) {
-        console.log('OK');
+        this.setState({
+          showType: 1
+        });
+      } else {
+        this.setState({
+          showType: 0
+        });
       }
     }
   }, {
@@ -99,6 +105,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       }
     }
   }, {
+    key: "onCardAction",
+    value: function onCardAction(e) {
+      console.log(e);
+      if (e.type == 'onClick') {
+        _index2.default.navigateTo({ url: '/pages/detail/detail?id=' + e.data.id });
+      }
+    }
+  }, {
     key: "_createData",
     value: function _createData() {
       var _this3 = this;
@@ -108,8 +122,8 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__26 = (0, _index.genCompid)(__prefix + "$compid__26");
-      var $compid__27 = (0, _index.genCompid)(__prefix + "$compid__27");
+      var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
+      var $compid__1 = (0, _index.genCompid)(__prefix + "$compid__1");
 
       var showType = this.__state.showType;
 
@@ -117,18 +131,16 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         return _this3.onSearchBarAction(e);
       };
 
-      var anonymousState__temp = this.__state.sceenHeight * 0.82;
       _index.propsManager.set({
         "showType": showType,
         "onAction": this.anonymousFunc0
-      }, $compid__26);
+      }, $compid__0);
       _index.propsManager.set({
-        "maxHeight": anonymousState__temp
-      }, $compid__27);
+        "onAction": this.onCardAction.bind(this)
+      }, $compid__1);
       Object.assign(this.__state, {
-        anonymousState__temp: anonymousState__temp,
-        $compid__26: $compid__26,
-        $compid__27: $compid__27
+        $compid__0: $compid__0,
+        $compid__1: $compid__1
       });
       return this.__state;
     }

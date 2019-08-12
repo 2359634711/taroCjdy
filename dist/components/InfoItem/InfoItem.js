@@ -49,6 +49,8 @@ var InfoItem = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "_createData",
     value: function _createData() {
+      var _this2 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
@@ -56,15 +58,25 @@ var InfoItem = (_temp2 = _class = function (_BaseComponent) {
       ;
 
       var infoItem = this.__props.infoItem;
+
+      this.anonymousFunc0 = function () {
+        return _this2.__props.onClick && _this2.__props.onClick(infoItem);
+      };
+
       Object.assign(this.__state, {
         infoItem: infoItem
       });
       return this.__state;
     }
+  }, {
+    key: "anonymousFunc0",
+    value: function anonymousFunc0(e) {
+      ;
+    }
   }]);
 
   return InfoItem;
-}(_index.Component), _class.$$events = [], _class.$$componentPath = "components/InfoItem/InfoItem", _temp2);
+}(_index.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "components/InfoItem/InfoItem", _temp2);
 exports.default = InfoItem;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(InfoItem));

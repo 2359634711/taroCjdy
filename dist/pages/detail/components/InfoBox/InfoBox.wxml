@@ -1,0 +1,11 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="infoBox">
+        <view class="left">
+            <view class="fontTitle">一食堂</view>
+            <view class="fontInfo">厚德学区附近，二号门旁边</view>
+        </view>
+        <view class="right">
+            <image src="{{anonymousState__temp}}"></image>
+        </view>
+    </view>
+</block>

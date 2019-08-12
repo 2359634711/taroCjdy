@@ -4,24 +4,45 @@ import InfoItem from "../../../../components/InfoItem/InfoItem"
 import './CardItem.scss'
 import '../../../../commonStyles/font.scss'
 
-export default class CardItem extends Component {
+interface IProps {
+    onAction: Function
+}
+export default class CardItem extends Component<IProps, any> {
 
 
 
     render() {
-        let infoItem = {
-            id: 0,
-            title: '一食堂',
-            value: '二号门，厚德学区附近'
-        }
+        let infoList = [
+            {
+                id: 0,
+                title: '一食堂',
+                value: '二号门，厚德学区附近'
+            }, {
+                id: 1,
+                title: '一食堂',
+                value: '二号门，厚德学区附近'
+            }, {
+                id: 2,
+                title: '一食堂',
+                value: '二号门，厚德学区附近'
+            }, {
+                id: 3,
+                title: '一食堂',
+                value: '二号门，厚德学区附近'
+            }
+        ]
         return (
             <View className='CardItem'>
                 <View className='title fontTitle'>食堂</View>
                 <View className='infoList'>
-                    <InfoItem infoItem={infoItem} />
-                    <InfoItem infoItem={infoItem} />
-                    <InfoItem infoItem={infoItem} />
-                    <InfoItem infoItem={infoItem} />
+                    {infoList.map(val => (
+                        <InfoItem key={val.id} infoItem={val} onClick={(e) => {
+                            this.props.onAction({
+                                type: 'onClick',
+                                data: e
+                            })
+                        }} />
+                    ))}
                 </View>
             </View>
         )

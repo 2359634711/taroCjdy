@@ -22,85 +22,92 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var SearchBar = (_temp2 = _class = function (_BaseComponent) {
-  _inherits(SearchBar, _BaseComponent);
+var Detail = (_temp2 = _class = function (_BaseComponent) {
+  _inherits(Detail, _BaseComponent);
 
-  function SearchBar() {
+  function Detail() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, SearchBar);
+    _classCallCheck(this, Detail);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["_$anonymousState__temp", "_$anonymousState__temp2", "anonymousState__temp3", "showType"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__5", "referInfo"], _this.config = {
+      navigationBarTitleText: '详情'
+    }, _this.customComponents = ["InfoBox", "ReferBox", "RichDetail"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(SearchBar, [{
+  _createClass(Detail, [{
     key: "_constructor",
     value: function _constructor(props) {
-      _get(SearchBar.prototype.__proto__ || Object.getPrototypeOf(SearchBar.prototype), "_constructor", this).call(this, props);
+      _get(Detail.prototype.__proto__ || Object.getPrototypeOf(Detail.prototype), "_constructor", this).call(this, props);
 
+      this.state = {
+        referInfo: {
+          title: '推荐菜',
+          list: [{
+            id: 0,
+            title: '扬州炒饭',
+            thumb: '../../res/icon/swiper2.jpg',
+            info: '第一窗口，少油、美味'
+          }, {
+            id: 0,
+            title: '扬州炒饭',
+            thumb: '../../res/icon/swiper2.jpg',
+            info: '第一窗口，少油、美味'
+          }, {
+            id: 0,
+            title: '扬州炒饭',
+            thumb: '../../res/icon/swiper2.jpg',
+            info: '第一窗口，少油、美味'
+          }, {
+            id: 0,
+            title: '扬州炒饭',
+            thumb: '../../res/icon/swiper2.jpg',
+            info: '第一窗口，少油、美味'
+          }, {
+            id: 0,
+            title: '扬州炒饭',
+            thumb: '../../res/icon/swiper2.jpg',
+            info: '第一窗口，少油、美味'
+          }]
+        }
+      };
       this.$$refs = [];
     }
   }, {
     key: "_createData",
     value: function _createData() {
-      var _this2 = this;
-
-      var _$anonymousState__temp, _$anonymousState__temp2;
-
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+      var $compid__5 = (0, _index.genCompid)(__prefix + "$compid__5");
 
-      var searchBar = void 0;
-      if (this.__props.showType == 1) {
-        this.anonymousFunc0 = function () {
-          _this2.__props.onAction({
-            type: 'open',
-            data: {}
-          });
-        };
-
-        _$anonymousState__temp = "/res/icon/search.png";
-      } else {
-        this.anonymousFunc1 = function () {
-          _this2.__props.onAction({
-            type: 'open',
-            data: {}
-          });
-        };
-
-        _$anonymousState__temp2 = "/res/icon/search.png";
-      }
-      var anonymousState__temp3 = (0, _index.internal_inline_style)(this.__props.showType == 1 ? 'width: 100%;background:#fff;' : '');
+      var referInfo = this.__state.referInfo;
+      var anonymousState__temp = "/res/icon/swiper1.jpg";
+      var anonymousState__temp2 = "/res/icon/swiper2.jpg";
+      var anonymousState__temp3 = "/res/icon/swiper3.jpg";
+      _index.propsManager.set({
+        "referInfo": referInfo
+      }, $compid__5);
       Object.assign(this.__state, {
-        _$anonymousState__temp: _$anonymousState__temp,
-        _$anonymousState__temp2: _$anonymousState__temp2,
-        anonymousState__temp3: anonymousState__temp3
+        anonymousState__temp: anonymousState__temp,
+        anonymousState__temp2: anonymousState__temp2,
+        anonymousState__temp3: anonymousState__temp3,
+        $compid__5: $compid__5
       });
       return this.__state;
     }
-  }, {
-    key: "anonymousFunc0",
-    value: function anonymousFunc0(e) {
-      ;
-    }
-  }, {
-    key: "anonymousFunc1",
-    value: function anonymousFunc1(e) {
-      ;
-    }
   }]);
 
-  return SearchBar;
-}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1"], _class.$$componentPath = "components/SearchBar/SearchBar", _temp2);
-exports.default = SearchBar;
+  return Detail;
+}(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/detail/detail", _temp2);
+exports.default = Detail;
 
-Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(SearchBar));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Detail, true));

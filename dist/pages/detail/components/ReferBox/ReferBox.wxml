@@ -1,0 +1,18 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="referBox">
+        <view class="titleBox fontTitle">{{referInfo.title}}</view>
+        <scroll-view scroll-x="{{true}}">
+            <view class="scrollView">
+                <view class="scrollItem" wx:for="{{loopArray1}}" wx:for-item="val" wx:for-index="_anonIdx2">
+                    <image mode="aspectFill" src="{{val.$loopState__temp2}}"></image>
+                    <view class="infoBox">
+                        <view class="title ">{{val.$original.title}}</view>
+                        <block wx:if="{{val.$original.info}}">
+                            <view class="info ">{{val.$original.info}}</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</block>

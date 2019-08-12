@@ -2,10 +2,7 @@
     <view class="CardItem">
         <view class="title fontTitle">食堂</view>
         <view class="infoList">
-            <info-item compid="{{$compid__0}}"></info-item>
-            <info-item compid="{{$compid__1}}"></info-item>
-            <info-item compid="{{$compid__2}}"></info-item>
-            <info-item compid="{{$compid__3}}"></info-item>
+            <info-item wx:key="$original.id" wx:for="{{loopArray0}}" wx:for-item="val" wx:for-index="__index0" compid="{{val.$compid__3}}"></info-item>
         </view>
     </view>
 </block>

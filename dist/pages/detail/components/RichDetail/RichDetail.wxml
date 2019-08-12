@@ -1,0 +1,8 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <view class="titleBox">
+            <view class="title fontInfo">图文详情</view>
+        </view>
+        <rich-text nodes=""></rich-text>
+    </view>
+</block>

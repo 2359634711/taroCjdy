@@ -36,7 +36,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__0", "$compid__1", "$compid__2", "$compid__3"], _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray0", "infoList", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CardItem, [{
@@ -49,40 +49,74 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "_createData",
     value: function _createData() {
+      var _this2 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
-      var $compid__1 = (0, _index.genCompid)(__prefix + "$compid__1");
-      var $compid__2 = (0, _index.genCompid)(__prefix + "$compid__2");
-      var $compid__3 = (0, _index.genCompid)(__prefix + "$compid__3");
 
-      var infoItem = {
+      var infoList = [{
         id: 0,
         title: '一食堂',
         value: '二号门，厚德学区附近'
-      };
-      _index.propsManager.set({
-        "infoItem": infoItem
-      }, $compid__0);
-      _index.propsManager.set({
-        "infoItem": infoItem
-      }, $compid__1);
-      _index.propsManager.set({
-        "infoItem": infoItem
-      }, $compid__2);
-      _index.propsManager.set({
-        "infoItem": infoItem
-      }, $compid__3);
+      }, {
+        id: 1,
+        title: '一食堂',
+        value: '二号门，厚德学区附近'
+      }, {
+        id: 2,
+        title: '一食堂',
+        value: '二号门，厚德学区附近'
+      }, {
+        id: 3,
+        title: '一食堂',
+        value: '二号门，厚德学区附近'
+      }];
+      var loopArray0 = infoList.map(function (val, __index0) {
+        val = {
+          $original: (0, _index.internal_get_original)(val)
+        };
+
+        var _$indexKey = "Suffz" + __index0;
+
+        _this2.anonymousFunc0Map[_$indexKey] = function (e) {
+          _this2.__props.onAction({
+            type: 'onClick',
+            data: e
+          });
+        };
+
+        var $compid__3 = (0, _index.genCompid)(__prefix + "wsEniqqfAx" + __index0);
+        _index.propsManager.set({
+          "infoItem": val.$original,
+          "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
+        }, $compid__3);
+        return {
+          _$indexKey: _$indexKey,
+          $compid__3: $compid__3,
+          $original: val.$original
+        };
+      });
       Object.assign(this.__state, {
-        $compid__0: $compid__0,
-        $compid__1: $compid__1,
-        $compid__2: $compid__2,
-        $compid__3: $compid__3
+        loopArray0: loopArray0,
+        infoList: infoList
       });
       return this.__state;
+    }
+  }, {
+    key: "anonymousFunc0",
+    value: function anonymousFunc0(_$indexKey) {
+      var _anonymousFunc0Map;
+
+      ;
+
+      for (var _len2 = arguments.length, e = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        e[_key2 - 1] = arguments[_key2];
+      }
+
+      return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
     }
   }]);
 

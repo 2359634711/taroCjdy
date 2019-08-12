@@ -1,5 +1,8 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="searchBar">
+    <view class="searchBar" style="{{anonymousState__temp3}}">
+        <block wx:if="{{showType == 1}}">
+            <view class="title fontTitle">搜索</view>
+        </block>
         <block>
             <block wx:if="{{showType == 1}}">
                 <view class="inputBox">

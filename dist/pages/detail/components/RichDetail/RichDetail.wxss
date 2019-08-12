@@ -1,0 +1,45 @@
+
+.titleBox {
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 20rpx; }
+
+.title {
+  text-align: center;
+  position: relative;
+  margin: auto;
+  width: 100rpx; }
+
+.title::after {
+  content: '';
+  position: absolute;
+  width: 70rpx;
+  height: 5rpx;
+  top: 50%;
+  left: -80rpx;
+  background: #f5f5f5;
+  z-index: 2; }
+
+.title::before {
+  content: '';
+  position: absolute;
+  width: 70rpx;
+  height: 5rpx;
+  top: 50%;
+  right: -80rpx;
+  background: #f5f5f5;
+  z-index: 2; }
+
+
+.fontTitle {
+  color: #1c1c1c;
+  font-size: 36rpx;
+  font-weight: 800; }
+
+.fontInfo {
+  color: #999;
+  font-size: 24rpx; }
+
+.fontContent {
+  color: #1c1c1c;
+  font-size: 28rpx; }

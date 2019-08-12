@@ -3,6 +3,7 @@ import { View } from '@tarojs/components'
 import MapItem from '../../components/MapItem/MapItem'
 import MainBox from './components/MainBox/MainBox'
 import SearchBar from '../../components/SearchBar/SearchBar'
+import CardItem from './components/CardItem/CardItem'
 
 interface IState {
   sceenHeight: number,
@@ -46,8 +47,13 @@ export default class Index extends Component<any, IState> {
   componentDidHide() { }
   onPageScroll(e) {
     if (e.scrollTop > this.state.sceenHeight * 0.75) {
-      console.log('OK')
-
+      this.setState({
+        showType: 1
+      })
+    } else {
+      this.setState({
+        showType: 0
+      })
     }
   }
   onSearchBarAction(e) {
@@ -58,13 +64,21 @@ export default class Index extends Component<any, IState> {
       })
     }
   }
+  onCardAction(e) {
+    console.log(e)
+    if (e.type == 'onClick') {
+      Taro.navigateTo({ url: '/pages/detail/detail?id=' + e.data.id })
+    }
+  }
   render() {
     let showType = this.state.showType;
     return (
       <View>
         <SearchBar showType={showType} onAction={(e) => this.onSearchBarAction(e)} />
         <MapItem />
-        <MainBox maxHeight={this.state.sceenHeight * 0.82} />
+        <MainBox >
+          <CardItem onAction={this.onCardAction.bind(this)} />
+        </MainBox>
       </View>
     )
   }

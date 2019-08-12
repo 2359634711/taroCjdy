@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="infoItem" hover-class="infoHover">
+    <view class="infoItem" hover-class="infoHover" bindtap="anonymousFunc0">
         <view class="infoLeft">
             <block wx:if="{{infoItem.icon}}">
                 <image class="icon" src="{{infoItem.icon}}"></image>
