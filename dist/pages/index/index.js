@@ -146,7 +146,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
-        var $compid__0 = (0, _index.genCompid)(__prefix + "ulpUOjZwmv" + _anonIdx);
+        var $compid__0 = (0, _index.genCompid)(__prefix + "PWKEJoIdfG" + _anonIdx);
         _index.propsManager.set({
           "cardInfo": val.$original,
           "onAction": _this3.onCardAction.bind(_this3)

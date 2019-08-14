@@ -36,7 +36,7 @@ var RichDetail = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = RichDetail.__proto__ || Object.getPrototypeOf(RichDetail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__18", "node"], _this.customComponents = ["ParserRichText"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = RichDetail.__proto__ || Object.getPrototypeOf(RichDetail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__6", "node"], _this.customComponents = ["ParserRichText"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(RichDetail, [{
@@ -54,13 +54,13 @@ var RichDetail = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__18 = (0, _index.genCompid)(__prefix + "$compid__18");
+      var $compid__6 = (0, _index.genCompid)(__prefix + "$compid__6");
       _index.propsManager.set({
         "html": this.__props.node,
         "selectable": true
-      }, $compid__18);
+      }, $compid__6);
       Object.assign(this.__state, {
-        $compid__18: $compid__18
+        $compid__6: $compid__6
       });
       return this.__state;
     }

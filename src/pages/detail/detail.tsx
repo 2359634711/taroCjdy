@@ -85,7 +85,6 @@ export default class Detail extends Component<IProps, IState>{
                 </Swiper>
 
 
-
                 <InfoBox infoBox={infoBox} />
                 <ReferBox referInfo={referInfo} />
 

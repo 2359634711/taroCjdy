@@ -5,11 +5,11 @@
                 <image mode="aspectFill" src="{{val}}"></image>
             </swiper-item>
         </swiper>
-        <info-box compid="{{$compid__14}}"></info-box>
-        <refer-box compid="{{$compid__15}}"></refer-box>
+        <info-box compid="{{$compid__10}}"></info-box>
+        <refer-box compid="{{$compid__11}}"></refer-box>
         <view class="detailBox">
             <view class="title"></view>
         </view>
-        <rich-detail compid="{{$compid__16}}"></rich-detail>
+        <rich-detail compid="{{$compid__12}}"></rich-detail>
     </view>
 </block>

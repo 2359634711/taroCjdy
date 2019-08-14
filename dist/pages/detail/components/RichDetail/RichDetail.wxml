@@ -3,6 +3,6 @@
         <view class="titleBox">
             <view class="title fontInfo">图文详情</view>
         </view>
-        <parser-rich-text compid="{{$compid__18}}"></parser-rich-text>
+        <parser-rich-text compid="{{$compid__6}}"></parser-rich-text>
     </view>
 </block>
