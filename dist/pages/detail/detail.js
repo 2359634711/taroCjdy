@@ -22,6 +22,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _require = require("../../utils/api.js"),
+    getGoodsDetail = _require.getGoodsDetail;
+
 var Detail = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Detail, _BaseComponent);
 
@@ -36,7 +39,7 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__2", "referInfo"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__14", "$compid__15", "$compid__16", "bannerList", "referInfo", "infoBox", "richNode"], _this.config = {
       navigationBarTitleText: '详情'
     }, _this.customComponents = ["InfoBox", "ReferBox", "RichDetail"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -47,37 +50,50 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       _get(Detail.prototype.__proto__ || Object.getPrototypeOf(Detail.prototype), "_constructor", this).call(this, props);
 
       this.state = {
+        bannerList: [],
         referInfo: {
-          title: '推荐菜',
-          list: [{
-            id: 0,
-            title: '扬州炒饭',
-            thumb: '../../res/icon/swiper2.jpg',
-            info: '第一窗口，少油、美味'
-          }, {
-            id: 0,
-            title: '扬州炒饭',
-            thumb: '../../res/icon/swiper2.jpg',
-            info: '第一窗口，少油、美味'
-          }, {
-            id: 0,
-            title: '扬州炒饭',
-            thumb: '../../res/icon/swiper2.jpg',
-            info: '第一窗口，少油、美味'
-          }, {
-            id: 0,
-            title: '扬州炒饭',
-            thumb: '../../res/icon/swiper2.jpg',
-            info: '第一窗口，少油、美味'
-          }, {
-            id: 0,
-            title: '扬州炒饭',
-            thumb: '../../res/icon/swiper2.jpg',
-            info: '第一窗口，少油、美味'
-          }]
-        }
+          title: '推荐',
+          list: []
+        },
+        infoBox: {
+          title: '',
+          info: '',
+          latitude: '',
+          longitude: ''
+        },
+        richNode: ''
       };
       this.$$refs = [];
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      var goodsid = this.$router.params.goodsid;
+      console.log(goodsid);
+      getGoodsDetail({ goodsid: goodsid }).then(function (res) {
+        var goodsInfo = res.data.data;
+        console.log(goodsInfo);
+        var referInfo = {
+          title: '推荐',
+          list: goodsInfo.referList
+        };
+        var infoBox = {
+          title: goodsInfo.title,
+          info: goodsInfo.info,
+          longitude: goodsInfo.longitude,
+          latitude: goodsInfo.latitude
+        };
+        _this2.setState({
+          bannerList: goodsInfo.banner_list,
+          referInfo: referInfo,
+          infoBox: infoBox,
+          richNode: goodsInfo.rich.rich_node
+        }, function () {
+          console.log(_this2.state);
+        });
+      });
     }
   }, {
     key: "_createData",
@@ -87,20 +103,28 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__2 = (0, _index.genCompid)(__prefix + "$compid__2");
+      var $compid__14 = (0, _index.genCompid)(__prefix + "$compid__14");
+      var $compid__15 = (0, _index.genCompid)(__prefix + "$compid__15");
+      var $compid__16 = (0, _index.genCompid)(__prefix + "$compid__16");
 
+      var bannerList = this.__state.bannerList;
       var referInfo = this.__state.referInfo;
-      var anonymousState__temp = "/res/icon/swiper1.jpg";
-      var anonymousState__temp2 = "/res/icon/swiper2.jpg";
-      var anonymousState__temp3 = "/res/icon/swiper3.jpg";
+      var infoBox = this.__state.infoBox;
+      var richNode = this.__state.richNode;
+
+      _index.propsManager.set({
+        "infoBox": infoBox
+      }, $compid__14);
       _index.propsManager.set({
         "referInfo": referInfo
-      }, $compid__2);
+      }, $compid__15);
+      _index.propsManager.set({
+        "node": richNode
+      }, $compid__16);
       Object.assign(this.__state, {
-        anonymousState__temp: anonymousState__temp,
-        anonymousState__temp2: anonymousState__temp2,
-        anonymousState__temp3: anonymousState__temp3,
-        $compid__2: $compid__2
+        $compid__14: $compid__14,
+        $compid__15: $compid__15,
+        $compid__16: $compid__16
       });
       return this.__state;
     }

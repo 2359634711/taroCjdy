@@ -36,7 +36,7 @@ var InfoBox = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = InfoBox.__proto__ || Object.getPrototypeOf(InfoBox)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = InfoBox.__proto__ || Object.getPrototypeOf(InfoBox)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "infoBox"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(InfoBox, [{
@@ -54,9 +54,13 @@ var InfoBox = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+
+      var infoBox = this.__props.infoBox;
+
       var anonymousState__temp = "/res/icon/daohang.png";
       Object.assign(this.__state, {
-        anonymousState__temp: anonymousState__temp
+        anonymousState__temp: anonymousState__temp,
+        infoBox: infoBox
       });
       return this.__state;
     }

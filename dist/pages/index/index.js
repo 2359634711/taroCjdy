@@ -39,7 +39,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray25", "$compid__70", "goodTitle"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray0", "$compid__1", "goodTitle"], _this.config = {
       navigationBarTitleText: '首页',
       navigationStyle: 'custom'
     }, _this.customComponents = ["SearchBar", "MapItem", "MainBox", "CardItem"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -118,7 +118,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     value: function onCardAction(e) {
       console.log(e);
       if (e.type == 'onClick') {
-        _index2.default.navigateTo({ url: '/pages/detail/detail?id=' + e.data.id });
+        _index2.default.navigateTo({ url: '/pages/detail/detail?goodsid=' + e.data.id });
       }
     }
   }, {
@@ -131,36 +131,39 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__70 = (0, _index.genCompid)(__prefix + "$compid__70");
+      var $compid__1 = (0, _index.genCompid)(__prefix + "$compid__1");
 
+      var goodTitle = this.__state.goodTitle;
+
+      goodTitle = goodTitle || [];
       var showType = this.__state.showType;
 
       this.anonymousFunc0 = function (e) {
         return _this3.onSearchBarAction(e);
       };
 
-      var loopArray25 = this.__state.goodTitle.map(function (val, _anonIdx) {
+      var loopArray0 = goodTitle.map(function (val, _anonIdx) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
-        var $compid__69 = (0, _index.genCompid)(__prefix + "tJUnEntCLu" + _anonIdx);
+        var $compid__0 = (0, _index.genCompid)(__prefix + "ulpUOjZwmv" + _anonIdx);
         _index.propsManager.set({
           "cardInfo": val.$original,
           "onAction": _this3.onCardAction.bind(_this3)
-        }, $compid__69);
+        }, $compid__0);
         return {
-          $compid__69: $compid__69,
+          $compid__0: $compid__0,
           $original: val.$original
         };
       });
-
       _index.propsManager.set({
         "showType": showType,
         "onAction": this.anonymousFunc0
-      }, $compid__70);
+      }, $compid__1);
       Object.assign(this.__state, {
-        loopArray25: loopArray25,
-        $compid__70: $compid__70
+        loopArray0: loopArray0,
+        $compid__1: $compid__1,
+        goodTitle: goodTitle
       });
       return this.__state;
     }

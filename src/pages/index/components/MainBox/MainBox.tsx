@@ -9,7 +9,6 @@ export default class MainBox extends Component<IProps, any>{
 
 
     render() {
-        console.log(this.props.maxHeight)
         return (
             <View className='mainBox' style={'max-height:' + this.props.maxHeight + 'px;overflow:hidden;'}>
                 {this.props.children}

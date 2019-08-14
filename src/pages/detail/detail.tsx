@@ -1,15 +1,19 @@
 import { Component, Config } from "@tarojs/taro";
 import { View, Swiper, SwiperItem, Image } from "@tarojs/components";
-import InfoBox from './components/InfoBox/InfoBox'
+import InfoBox, { IInfoBox } from './components/InfoBox/InfoBox'
 import ReferBox, { IReferInfo } from './components/ReferBox/ReferBox'
 import RichDetail from './components/RichDetail/RichDetail'
 import './detail.scss'
 
+const { getGoodsDetail } = require('../../utils/api')
 interface IProps {
 
 }
 interface IState {
-    referInfo: IReferInfo
+    bannerList: string[],
+    referInfo: IReferInfo,
+    infoBox: IInfoBox
+    richNode: any
 }
 
 export default class Detail extends Component<IProps, IState>{
@@ -19,45 +23,52 @@ export default class Detail extends Component<IProps, IState>{
     constructor(props) {
         super(props);
         this.state = {
+            bannerList: [],
             referInfo: {
-                title: '推荐菜',
-                list: [
-                    {
-                        id: 0,
-                        title: '扬州炒饭',
-                        thumb: '../../res/icon/swiper2.jpg',
-                        info: '第一窗口，少油、美味'
-                    },
-                    {
-                        id: 0,
-                        title: '扬州炒饭',
-                        thumb: '../../res/icon/swiper2.jpg',
-                        info: '第一窗口，少油、美味'
-                    },
-                    {
-                        id: 0,
-                        title: '扬州炒饭',
-                        thumb: '../../res/icon/swiper2.jpg',
-                        info: '第一窗口，少油、美味'
-                    },
-                    {
-                        id: 0,
-                        title: '扬州炒饭',
-                        thumb: '../../res/icon/swiper2.jpg',
-                        info: '第一窗口，少油、美味'
-                    },
-                    {
-                        id: 0,
-                        title: '扬州炒饭',
-                        thumb: '../../res/icon/swiper2.jpg',
-                        info: '第一窗口，少油、美味'
-                    }
-                ]
-            }
+                title: '推荐',
+                list: []
+            },
+            infoBox: {
+                title: '',
+                info: '',
+                latitude: '',
+                longitude: ''
+            },
+            richNode: ''
         }
     }
+    componentWillMount() {
+        let goodsid = this.$router.params.goodsid;
+        console.log(goodsid)
+        getGoodsDetail({ goodsid }).then(res => {
+            let goodsInfo = res.data.data
+            console.log(goodsInfo)
+            let referInfo = {
+                title: '推荐',
+                list: goodsInfo.referList
+            }
+            let infoBox = {
+                title: goodsInfo.title,
+                info: goodsInfo.info,
+                longitude: goodsInfo.longitude,
+                latitude: goodsInfo.latitude
+            }
+            this.setState({
+                bannerList: goodsInfo.banner_list,
+                referInfo,
+                infoBox,
+                richNode: goodsInfo.rich.rich_node
+
+            }, () => {
+                console.log(this.state)
+            })
+        })
+    }
     render() {
-        let referInfo = this.state.referInfo
+        let { bannerList } = this.state
+        let { referInfo } = this.state
+        let { infoBox } = this.state
+        let { richNode } = this.state
         return (
             <View>
                 <Swiper
@@ -66,29 +77,23 @@ export default class Detail extends Component<IProps, IState>{
                     circular
                     indicatorDots
                     autoplay>
-                    <SwiperItem style='top: 0'>
-                        <Image mode='aspectFill' src={require('../../res/icon/swiper1.jpg')}></Image>
-                    </SwiperItem>
-                    autoplay>
-                    <SwiperItem style='top: 0'>
-                        <Image mode='aspectFill' src={require('../../res/icon/swiper2.jpg')}></Image>
-                    </SwiperItem>
-                    autoplay>
-                    <SwiperItem style='top: 0'>
-                        <Image className='' mode='aspectFill' src={require('../../res/icon/swiper3.jpg')}></Image>
-                    </SwiperItem>
+                    {bannerList.map(val => (
+                        <SwiperItem key={val} style='top: 0'>
+                            <Image mode='aspectFill' src={val}></Image>
+                        </SwiperItem>
+                    ))}
                 </Swiper>
 
 
 
-                <InfoBox />
-
+                <InfoBox infoBox={infoBox} />
                 <ReferBox referInfo={referInfo} />
+
 
                 <View className='detailBox'>
                     <View className='title'></View>
                 </View>
-                <RichDetail />
+                <RichDetail node={richNode} />
             </View >
         )
     }

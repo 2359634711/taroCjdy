@@ -1,3 +1,6 @@
 {
-  "component": true
+  "component": true,
+  "usingComponents": {
+    "parser-rich-text": "../../../../components/ParserRichText/parserRichText"
+  }
 }

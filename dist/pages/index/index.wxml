@@ -1,9 +1,9 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
-        <search-bar compid="{{$compid__70}}"></search-bar>
+        <search-bar compid="{{$compid__1}}"></search-bar>
         <map-item></map-item>
         <main-box>
-            <card-item wx:key="$original.classId" wx:for="{{loopArray25}}" wx:for-item="val" wx:for-index="_anonIdx2" compid="{{val.$compid__69}}"></card-item>
+            <card-item wx:key="$original.classId" wx:for="{{loopArray0}}" wx:for-item="val" wx:for-index="_anonIdx2" compid="{{val.$compid__0}}"></card-item>
         </main-box>
     </view>
 </block>

@@ -75,17 +75,19 @@ export default class Index extends Component<any, IState> {
   onCardAction(e) {
     console.log(e)
     if (e.type == 'onClick') {
-      Taro.navigateTo({ url: '/pages/detail/detail?id=' + e.data.id })
+      Taro.navigateTo({ url: '/pages/detail/detail?goodsid=' + e.data.id })
     }
   }
   render() {
+    let { goodTitle } = this.state
+    goodTitle = goodTitle || []
     let showType = this.state.showType;
     return (
       <View>
         <SearchBar showType={showType} onAction={(e) => this.onSearchBarAction(e)} />
         <MapItem />
         <MainBox >
-          {this.state.goodTitle.map(val => (
+          {goodTitle.map(val => (
             <CardItem key={val.classId} cardInfo={val} onAction={this.onCardAction.bind(this)} />
           ))}
 

@@ -1,21 +1,15 @@
 <block wx:if="{{$taroCompReady}}">
     <view>
         <swiper indicator-color="#999" indicator-active-color="#333" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
-            <swiper-item style="top: 0">
-                <image mode="aspectFill" src="{{anonymousState__temp}}"></image>
-            </swiper-item>autoplay>
-            <swiper-item style="top: 0">
-                <image mode="aspectFill" src="{{anonymousState__temp2}}"></image>
-            </swiper-item>autoplay>
-            <swiper-item style="top: 0">
-                <image class="" mode="aspectFill" src="{{anonymousState__temp3}}"></image>
+            <swiper-item wx:key="val" style="top: 0" wx:for="{{bannerList}}" wx:for-item="val" wx:for-index="_anonIdx2">
+                <image mode="aspectFill" src="{{val}}"></image>
             </swiper-item>
         </swiper>
-        <info-box></info-box>
-        <refer-box compid="{{$compid__2}}"></refer-box>
+        <info-box compid="{{$compid__14}}"></info-box>
+        <refer-box compid="{{$compid__15}}"></refer-box>
         <view class="detailBox">
             <view class="title"></view>
         </view>
-        <rich-detail></rich-detail>
+        <rich-detail compid="{{$compid__16}}"></rich-detail>
     </view>
 </block>

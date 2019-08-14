@@ -36,7 +36,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray28", "cardInfo", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["cardInfo", "loopArray2", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CardItem, [{
@@ -57,7 +57,9 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var loopArray28 = this.__state.cardInfo.list.map(function (val, __index0) {
+      var cardInfo = this.__state.cardInfo;
+
+      var loopArray2 = cardInfo.list.map(function (val, __index0) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
@@ -68,7 +70,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           value: val.$original.info
         };
 
-        var _$indexKey = "PjTdR" + __index0;
+        var _$indexKey = "LEfUI" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function (e) {
           _this2.__props.onAction({
@@ -77,21 +79,21 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           });
         };
 
-        var $compid__73 = (0, _index.genCompid)(__prefix + "FXYpYrodrv" + __index0);
+        var $compid__5 = (0, _index.genCompid)(__prefix + "NDSCdacMAB" + __index0);
         _index.propsManager.set({
           "infoItem": infoItem,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
-        }, $compid__73);
+        }, $compid__5);
         return {
           infoItem: infoItem,
           _$indexKey: _$indexKey,
-          $compid__73: $compid__73,
+          $compid__5: $compid__5,
           $original: val.$original
         };
       });
-
       Object.assign(this.__state, {
-        loopArray28: loopArray28
+        cardInfo: cardInfo,
+        loopArray2: loopArray2
       });
       return this.__state;
     }
@@ -112,6 +114,14 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
 
   return CardItem;
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/index/components/CardItem/CardItem", _temp2);
+
+
+CardItem.defaultProps = {
+  onAction: function onAction() {},
+  cardInfo: {
+    list: []
+  }
+};
 exports.default = CardItem;
 
 Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(CardItem));

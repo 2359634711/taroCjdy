@@ -1,17 +1,20 @@
 import { Component } from "@tarojs/taro";
-import { View, RichText } from "@tarojs/components";
+import { View } from "@tarojs/components";
 import './RichDetail.scss'
 import '../../../../commonStyles/font.scss'
+import ParserRichText from '../../../../components/ParserRichText/parserRichText'
 
-
-export default class RichDetail extends Component {
+interface IProps {
+    node: any
+}
+export default class RichDetail extends Component<IProps, any>{
     render() {
         return (
-            <View>
+            <View className='richBox'>
                 <View className='titleBox'>
                     <View className='title fontInfo'>图文详情</View>
                 </View>
-                <RichText nodes=''></RichText>
+                <ParserRichText html={this.props.node} selectable></ParserRichText>
             </View>
         )
     }

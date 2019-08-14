@@ -28,17 +28,23 @@ interface IState {
     }
 }
 export default class CardItem extends Component<IProps, IState> {
+    static defaultProps = {
+        onAction: () => { },
+        cardInfo: {
+            list: []
+        }
+    };
     constructor(props) {
         super(props);
         this.state = this.props
     }
     render() {
-
+        const { cardInfo } = this.state
         return (
             <View className='CardItem'>
-                <View className='title fontTitle'>{this.state.cardInfo.className}</View>
+                <View className='title fontTitle'>{cardInfo.className}</View>
                 <View className='infoList'>
-                    {this.state.cardInfo.list.map(val => {
+                    {cardInfo.list.map(val => {
                         let infoItem: IInfoItem = {
                             id: val.id,
                             title: val.title,

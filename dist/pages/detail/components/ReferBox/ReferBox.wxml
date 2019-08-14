@@ -3,12 +3,12 @@
         <view class="titleBox fontTitle">{{referInfo.title}}</view>
         <scroll-view scroll-x="{{true}}">
             <view class="scrollView">
-                <view class="scrollItem" wx:for="{{loopArray1}}" wx:for-item="val" wx:for-index="_anonIdx2">
-                    <image mode="aspectFill" src="{{val.$loopState__temp2}}"></image>
+                <view wx:key="id" class="scrollItem" wx:for="{{referInfo.list}}" wx:for-item="val" wx:for-index="_anonIdx2">
+                    <image mode="aspectFill" src="{{val.thumb}}"></image>
                     <view class="infoBox">
-                        <view class="title ">{{val.$original.title}}</view>
-                        <block wx:if="{{val.$original.info}}">
-                            <view class="info ">{{val.$original.info}}</view>
+                        <view class="title ">{{val.title}}</view>
+                        <block wx:if="{{val.info}}">
+                            <view class="info ">{{val.info}}</view>
                         </block>
                     </view>
                 </view>

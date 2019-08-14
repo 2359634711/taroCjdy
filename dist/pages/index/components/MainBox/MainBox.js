@@ -54,8 +54,6 @@ var MainBox = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-
-      console.log(this.__props.maxHeight);
       Object.assign(this.__state, {});
       return this.__state;
     }

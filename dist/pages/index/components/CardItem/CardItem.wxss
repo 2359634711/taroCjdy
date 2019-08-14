@@ -1,4 +1,17 @@
 
+.CardItem {
+  border-radius: 40rpx;
+  margin: 20rpx 10rpx;
+  overflow: hidden; }
+
+.title {
+  padding: 40rpx 25rpx;
+  background: #ffffff; }
+
+.infoList {
+  background: #ffffff; }
+
+
 .fontTitle {
   color: #1c1c1c;
   font-size: 36rpx;
@@ -11,16 +24,3 @@
 .fontContent {
   color: #1c1c1c;
   font-size: 28rpx; }
-
-
-.CardItem {
-  border-radius: 40rpx;
-  margin: 20rpx 10rpx;
-  overflow: hidden; }
-
-.title {
-  padding: 40rpx 25rpx;
-  background: #ffffff; }
-
-.infoList {
-  background: #ffffff; }

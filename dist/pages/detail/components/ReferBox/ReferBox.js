@@ -36,7 +36,7 @@ var ReferBox = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ReferBox.__proto__ || Object.getPrototypeOf(ReferBox)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["referInfo", "loopArray1"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ReferBox.__proto__ || Object.getPrototypeOf(ReferBox)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["referInfo"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ReferBox, [{
@@ -55,20 +55,11 @@ var ReferBox = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var referInfo = this.__state.referInfo;
-      var loopArray1 = referInfo.list.map(function (val, _anonIdx) {
-        val = {
-          $original: (0, _index.internal_get_original)(val)
-        };
-        var $loopState__temp2 = "/res/icon/swiper3.jpg";
-        return {
-          $loopState__temp2: $loopState__temp2,
-          $original: val.$original
-        };
-      });
+      var referInfo = this.__props.referInfo;
+
+      console.log(referInfo);
       Object.assign(this.__state, {
-        referInfo: referInfo,
-        loopArray1: loopArray1
+        referInfo: referInfo
       });
       return this.__state;
     }
@@ -76,6 +67,13 @@ var ReferBox = (_temp2 = _class = function (_BaseComponent) {
 
   return ReferBox;
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/detail/components/ReferBox/ReferBox", _temp2);
+
+
+ReferBox.defaultProps = {
+  referInfo: {
+    list: []
+  }
+};
 exports.default = ReferBox;
 
 Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(ReferBox));

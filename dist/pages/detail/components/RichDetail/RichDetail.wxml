@@ -1,8 +1,8 @@
 <block wx:if="{{$taroCompReady}}">
-    <view>
+    <view class="richBox">
         <view class="titleBox">
             <view class="title fontInfo">图文详情</view>
         </view>
-        <rich-text nodes=""></rich-text>
+        <parser-rich-text compid="{{$compid__18}}"></parser-rich-text>
     </view>
 </block>
