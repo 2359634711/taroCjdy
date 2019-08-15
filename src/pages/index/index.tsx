@@ -1,16 +1,17 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import MapItem from '../../components/MapItem/MapItem'
+import MapItem, { IMarkItem } from '../../components/MapItem/MapItem'
 import MainBox from './components/MainBox/MainBox'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import CardItem, { ICardInfo } from './components/CardItem/CardItem'
-const { getGoodsTitle } = require('../../utils/api')
+import { getGoodsTitle, getGoodsDetail } from '../../utils/api'
 
 interface IState {
   sceenHeight: number,
   scrollFlag: boolean,
-  showType: number,
-  goodTitle: ICardInfo[]
+  showType: number,//0 搜索小图标 1 搜索bar
+  goodTitle: ICardInfo[],
+  markList: IMarkItem[]
 }
 
 export default class Index extends Component<any, IState> {
@@ -39,7 +40,7 @@ export default class Index extends Component<any, IState> {
       }
     })
 
-    getGoodsTitle().then(res => {
+    getGoodsTitle().then((res: any) => {
       console.log(res)
       this.setState({
         goodTitle: res.data
@@ -50,6 +51,9 @@ export default class Index extends Component<any, IState> {
   componentWillUnmount() { }
 
   componentDidShow() {
+    this.setState({
+      showType: 0
+    })
   }
 
   componentDidHide() { }
@@ -73,19 +77,37 @@ export default class Index extends Component<any, IState> {
     }
   }
   onCardAction(e) {
-    console.log(e)
+    Taro.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
     if (e.type == 'onClick') {
-      Taro.navigateTo({ url: '/pages/detail/detail?goodsid=' + e.data.id })
+      // Taro.navigateTo({ url: '/pages/detail/detail?goodsid=' + e.data.id })
+      let goodsid = e.data.id;
+      getGoodsDetail({ goodsid }).then((res: any) => {
+        this.setState({
+          markList: [{
+            ...res.data.data
+          }]
+        })
+      })
     }
   }
   render() {
     let { goodTitle } = this.state
     goodTitle = goodTitle || []
     let showType = this.state.showType;
+    let { markList } = this.state;
     return (
       <View>
         <SearchBar showType={showType} onAction={(e) => this.onSearchBarAction(e)} />
-        <MapItem />
+        <MapItem onAction={(e) => {
+          if (e.type == 'onMarkerTap') {
+            Taro.navigateTo({
+              url: '/pages/detail/detail?goodsid=' + e.data.markerId
+            })
+          }
+        }} markList={markList} />
         <MainBox >
           {goodTitle.map(val => (
             <CardItem key={val.classId} cardInfo={val} onAction={this.onCardAction.bind(this)} />

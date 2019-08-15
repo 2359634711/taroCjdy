@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "info-box": "./components/InfoBox/InfoBox",
-    "refer-box": "./components/ReferBox/ReferBox",
-    "rich-detail": "./components/RichDetail/RichDetail"
-  },
-  "navigationBarTitleText": "详情"
-}

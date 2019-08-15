@@ -1,4 +1,4 @@
-import { Component } from "@tarojs/taro";
+import Taro, { Component } from "@tarojs/taro";
 import { View, Image, Input } from "@tarojs/components";
 import './SearchBar.scss'
 import '../../commonStyles/font.scss'
@@ -20,7 +20,11 @@ export default class SearchBar extends Component<IProps, any> {
                             data: {}
                         })
                     }} src={require('../../res/icon/search.png')} ></Image>
-                    <Input placeholder='请输入搜索的内容'></Input>
+                    <Input onClick={() => {
+                        Taro.navigateTo({
+                            url: '/pages/search/search'
+                        })
+                    }} placeholder='请输入搜索的内容'></Input>
                 </View>
             )
         } else {
@@ -41,7 +45,7 @@ export default class SearchBar extends Component<IProps, any> {
             <View className='title fontTitle'>搜索</View>
         )
         return (
-            <View className='searchBar' style={this.props.showType == 1 ? 'width: 100%;background:#fff;': ''}>
+            <View className='searchBar' style={this.props.showType == 1 ? 'width: 100%;background:#fff;' : ''}>
                 {this.props.showType == 1 && title}
                 {searchBar}
             </View>
