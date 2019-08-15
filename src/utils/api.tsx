@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro'
-const serverUri = 'http://127.0.0.1:8081/'
+// const serverUri = 'http://127.0.0.1:8081/'
+const serverUri = 'https://nepu.fun:8081/'
 const header = {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
 }

@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../npm/@tarojs/taro-weapp/index.js");
+var _index = require("../../npm/@tarojs/taro-qq/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -146,7 +146,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
-        var $compid__0 = (0, _index.genCompid)(__prefix + "PWKEJoIdfG" + _anonIdx);
+        var $compid__0 = (0, _index.genCompid)(__prefix + "XiGrKQsTmZ" + _anonIdx);
         _index.propsManager.set({
           "cardInfo": val.$original,
           "onAction": _this3.onCardAction.bind(_this3)
@@ -178,4 +178,4 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/index/index", _temp2);
 exports.default = Index;
 
-Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index, true));
+Component(require('../../npm/@tarojs/taro-qq/index.js').default.createComponent(Index, true));

@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../../../npm/@tarojs/taro-weapp/index.js");
+var _index = require("../../../../npm/@tarojs/taro-qq/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -70,7 +70,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           value: val.$original.info
         };
 
-        var _$indexKey = "hjKCD" + __index0;
+        var _$indexKey = "BzqkC" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function (e) {
           _this2.__props.onAction({
@@ -79,7 +79,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           });
         };
 
-        var $compid__5 = (0, _index.genCompid)(__prefix + "qKTMaryclg" + __index0);
+        var $compid__5 = (0, _index.genCompid)(__prefix + "pxwHwyAYCx" + __index0);
         _index.propsManager.set({
           "infoItem": infoItem,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
@@ -124,4 +124,4 @@ CardItem.defaultProps = {
 };
 exports.default = CardItem;
 
-Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(CardItem));
+Component(require('../../../../npm/@tarojs/taro-qq/index.js').default.createComponent(CardItem));
