@@ -1,0 +1,51 @@
+.searchImg {
+  width: 56px;
+  height: 56px;
+  margin-left: 20px;
+}
+.SearchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  box-shadow: 0 0 10px 0 #ccc;
+  margin: 10px 20px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.input {
+  font-size: 28px;
+  line-height: 80px;
+  height: 80px;
+  margin-left: 20px;
+  flex-grow: 1;
+}
+.searchBtn {
+  flex-grow: 0;
+  font-size: 28px;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 25px;
+  transition: all 0.5s;
+}
+.searchBtnDis {
+  background: #eee;
+  color: #999;
+}
+
+
+.searchBtnActive {
+  background: rgba(81, 81, 255, 0.855);
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.searchBtnHover{
+    background: rgba(117, 117, 255, 0.855);
+    color: #fff;
+  }

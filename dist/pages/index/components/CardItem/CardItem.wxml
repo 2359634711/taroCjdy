@@ -1,8 +1,0 @@
-<block wx:if="{{$taroCompReady}}">
-    <view class="CardItem">
-        <view class="title fontTitle">{{cardInfo.className}}</view>
-        <view class="infoList">
-            <info-item wx:key="$original.id" wx:for="{{loopArray2}}" wx:for-item="val" wx:for-index="__index0" compid="{{val.$compid__5}}"></info-item>
-        </view>
-    </view>
-</block>
