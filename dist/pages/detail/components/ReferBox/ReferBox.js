@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -76,4 +76,4 @@ ReferBox.defaultProps = {
 };
 exports.default = ReferBox;
 
-Component(require('../../../../npm/@tarojs/taro-qq/index.js').default.createComponent(ReferBox));
+Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(ReferBox));

@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -69,8 +69,14 @@ var SearchBar = (_temp2 = _class = function (_BaseComponent) {
         };
 
         _$anonymousState__temp = "/res/icon/search.png";
-      } else {
+
         this.anonymousFunc1 = function () {
+          _index2.default.navigateTo({
+            url: '/pages/search/search'
+          });
+        };
+      } else {
+        this.anonymousFunc2 = function () {
           _this2.__props.onAction({
             type: 'open',
             data: {}
@@ -97,10 +103,15 @@ var SearchBar = (_temp2 = _class = function (_BaseComponent) {
     value: function anonymousFunc1(e) {
       ;
     }
+  }, {
+    key: "anonymousFunc2",
+    value: function anonymousFunc2(e) {
+      ;
+    }
   }]);
 
   return SearchBar;
-}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1"], _class.$$componentPath = "components/SearchBar/SearchBar", _temp2);
+}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2"], _class.$$componentPath = "components/SearchBar/SearchBar", _temp2);
 exports.default = SearchBar;
 
-Component(require('../../npm/@tarojs/taro-qq/index.js').default.createComponent(SearchBar));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(SearchBar));

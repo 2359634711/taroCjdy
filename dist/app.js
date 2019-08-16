@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _index = require('./npm/@tarojs/taro-qq/index.js');
+var _index = require('./npm/@tarojs/taro-weapp/index.js');
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -75,7 +75,7 @@ var _App = function (_BaseComponent) {
 
 exports.default = _App;
 
-App(require('./npm/@tarojs/taro-qq/index.js').default.createApp(_App));
+App(require('./npm/@tarojs/taro-weapp/index.js').default.createApp(_App));
 _index2.default.initPxTransform({
   "designWidth": 750,
   "deviceRatio": {

@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -63,4 +63,4 @@ var MainBox = (_temp2 = _class = function (_BaseComponent) {
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/index/components/MainBox/MainBox", _temp2);
 exports.default = MainBox;
 
-Component(require('../../../../npm/@tarojs/taro-qq/index.js').default.createComponent(MainBox));
+Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(MainBox));

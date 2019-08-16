@@ -14,7 +14,8 @@ export interface IMarkItem {
     longitude: number,
     id?: string,
     title?: string,
-    info?: string
+    info?: string,
+    callout?: any
 }
 
 export default class MapItem extends Component<IProps, any> {
@@ -41,7 +42,19 @@ export default class MapItem extends Component<IProps, any> {
                 iconPath: pinImg,
                 height: 30,
                 width: 30,
-                id: Number(val.id)
+                id: Number(val.id),
+                callout: {
+                    content: val.title+'\n点击查看详情' || '',
+                    fontSize: 12,
+                    borderRadius: 5,
+                    padding: 10,
+                    display: 'ALWAYS' as 'ALWAYS',
+                    textAlign: 'center' as 'center',
+                    color: '#1c1c1c',
+                    borderWidth: 1,
+                    bgColor: '#ffffff',
+                    borderColor: '#fffff'
+                }
             }
         ))
         let latitude = 0;
@@ -64,7 +77,7 @@ export default class MapItem extends Component<IProps, any> {
 
         return (
             <View className='mapBox'>
-                <Map markers={markers} onMarkerTap={this.markertap.bind(this)} latitude={latitude} longitude={longitude} />
+                <Map markers={markers} onCalloutTap={this.markertap.bind(this)} onMarkerTap={this.markertap.bind(this)} latitude={latitude} longitude={longitude} />
             </View>
         )
     }

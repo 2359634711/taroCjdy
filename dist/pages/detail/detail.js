@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -39,7 +39,7 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__2", "$compid__3", "$compid__4", "bannerList", "referInfo", "infoBox", "richNode"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__5", "$compid__6", "$compid__7", "bannerList", "referInfo", "infoBox", "richNode"], _this.config = {
       navigationBarTitleText: '详情'
     }, _this.customComponents = ["InfoBox", "ReferBox", "RichDetail"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -89,7 +89,7 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
           bannerList: goodsInfo.banner_list,
           referInfo: referInfo,
           infoBox: infoBox,
-          richNode: goodsInfo.rich.rich_node
+          richNode: goodsInfo.rich ? goodsInfo.rich.rich_node : ''
         }, function () {
           console.log(_this2.state);
         });
@@ -103,9 +103,9 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__2 = (0, _index.genCompid)(__prefix + "$compid__2");
-      var $compid__3 = (0, _index.genCompid)(__prefix + "$compid__3");
-      var $compid__4 = (0, _index.genCompid)(__prefix + "$compid__4");
+      var $compid__5 = (0, _index.genCompid)(__prefix + "$compid__5");
+      var $compid__6 = (0, _index.genCompid)(__prefix + "$compid__6");
+      var $compid__7 = (0, _index.genCompid)(__prefix + "$compid__7");
 
       var bannerList = this.__state.bannerList;
       var referInfo = this.__state.referInfo;
@@ -114,17 +114,17 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
 
       _index.propsManager.set({
         "infoBox": infoBox
-      }, $compid__2);
+      }, $compid__5);
       _index.propsManager.set({
         "referInfo": referInfo
-      }, $compid__3);
+      }, $compid__6);
       _index.propsManager.set({
         "node": richNode
-      }, $compid__4);
+      }, $compid__7);
       Object.assign(this.__state, {
-        $compid__2: $compid__2,
-        $compid__3: $compid__3,
-        $compid__4: $compid__4
+        $compid__5: $compid__5,
+        $compid__6: $compid__6,
+        $compid__7: $compid__7
       });
       return this.__state;
     }
@@ -134,4 +134,4 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/detail/detail", _temp2);
 exports.default = Detail;
 
-Component(require('../../npm/@tarojs/taro-qq/index.js').default.createComponent(Detail, true));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Detail, true));

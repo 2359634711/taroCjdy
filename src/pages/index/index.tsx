@@ -54,6 +54,10 @@ export default class Index extends Component<any, IState> {
     this.setState({
       showType: 0
     })
+    let goodsid = this.$router.params.goodsid
+    if (goodsid) {
+      this.showMapMarkerFromGoodsid(goodsid)
+    }
   }
 
   componentDidHide() { }
@@ -84,14 +88,18 @@ export default class Index extends Component<any, IState> {
     if (e.type == 'onClick') {
       // Taro.navigateTo({ url: '/pages/detail/detail?goodsid=' + e.data.id })
       let goodsid = e.data.id;
-      getGoodsDetail({ goodsid }).then((res: any) => {
-        this.setState({
-          markList: [{
-            ...res.data.data
-          }]
-        })
-      })
+      this.showMapMarkerFromGoodsid(goodsid)
     }
+  }
+  showMapMarkerFromGoodsid(goodsid) {
+
+    getGoodsDetail({ goodsid }).then((res: any) => {
+      this.setState({
+        markList: [{
+          ...res.data.data
+        }]
+      })
+    })
   }
   render() {
     let { goodTitle } = this.state

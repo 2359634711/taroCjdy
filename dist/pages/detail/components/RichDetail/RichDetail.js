@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -36,7 +36,7 @@ var RichDetail = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = RichDetail.__proto__ || Object.getPrototypeOf(RichDetail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__6", "node"], _this.customComponents = ["ParserRichText"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = RichDetail.__proto__ || Object.getPrototypeOf(RichDetail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__9", "node"], _this.customComponents = ["ParserRichText"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(RichDetail, [{
@@ -54,13 +54,13 @@ var RichDetail = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__6 = (0, _index.genCompid)(__prefix + "$compid__6");
+      var $compid__9 = (0, _index.genCompid)(__prefix + "$compid__9");
       _index.propsManager.set({
         "html": this.__props.node,
         "selectable": true
-      }, $compid__6);
+      }, $compid__9);
       Object.assign(this.__state, {
-        $compid__6: $compid__6
+        $compid__9: $compid__9
       });
       return this.__state;
     }
@@ -70,4 +70,4 @@ var RichDetail = (_temp2 = _class = function (_BaseComponent) {
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/detail/components/RichDetail/RichDetail", _temp2);
 exports.default = RichDetail;
 
-Component(require('../../../../npm/@tarojs/taro-qq/index.js').default.createComponent(RichDetail));
+Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(RichDetail));

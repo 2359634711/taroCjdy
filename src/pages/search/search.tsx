@@ -3,12 +3,15 @@ import { View } from "@tarojs/components";
 import SearchBox from './components/SearchBox/SearchBox'
 import { searchGoods } from '../../utils/api'
 import GoodsItem, { IGoodsInfo } from './components/GoodsItem/GoodsItem'
-
+import './search.scss'
 interface IState {
     goodsList: IGoodsInfo[]
 }
 
 export default class Search extends Component<any, IState> {
+    static defaultProps = {
+        goodsList: []
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -53,14 +56,21 @@ export default class Search extends Component<any, IState> {
             this.subSearch(e.data.keywords)
         }
     }
+    onGoodsItemClick(e) {
+        if (e.type == 'onItemClick') {
+            Taro.redirectTo({
+                url: '/pages/index/index?goodsid='+e.data.id
+            })
+        }
+    }
     render() {
-        let {goodsList} = this.state
+        let { goodsList } = this.state
         return (
-            <View>
+            <View className='searchBox'>
                 <SearchBox onAction={this.onSearchAction.bind(this)} />
                 <View>
                     {goodsList.map(val => (
-                        <GoodsItem goodsInfo={val} />
+                        <GoodsItem key={val.id} onAction={this.onGoodsItemClick.bind(this)} goodsInfo={val} />
                     ))}
                 </View>
             </View>

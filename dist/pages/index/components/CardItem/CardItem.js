@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -36,7 +36,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["cardInfo", "loopArray2", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["cardInfo", "loopArray3", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CardItem, [{
@@ -59,7 +59,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
 
       var cardInfo = this.__state.cardInfo;
 
-      var loopArray2 = cardInfo.list.map(function (val, __index0) {
+      var loopArray3 = cardInfo.list.map(function (val, __index0) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
@@ -70,7 +70,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           value: val.$original.info
         };
 
-        var _$indexKey = "BzqkC" + __index0;
+        var _$indexKey = "EaKgk" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function (e) {
           _this2.__props.onAction({
@@ -79,21 +79,21 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           });
         };
 
-        var $compid__5 = (0, _index.genCompid)(__prefix + "pxwHwyAYCx" + __index0);
+        var $compid__8 = (0, _index.genCompid)(__prefix + "VlcMrQyXQK" + __index0);
         _index.propsManager.set({
           "infoItem": infoItem,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
-        }, $compid__5);
+        }, $compid__8);
         return {
           infoItem: infoItem,
           _$indexKey: _$indexKey,
-          $compid__5: $compid__5,
+          $compid__8: $compid__8,
           $original: val.$original
         };
       });
       Object.assign(this.__state, {
         cardInfo: cardInfo,
-        loopArray2: loopArray2
+        loopArray3: loopArray3
       });
       return this.__state;
     }
@@ -124,4 +124,4 @@ CardItem.defaultProps = {
 };
 exports.default = CardItem;
 
-Component(require('../../../../npm/@tarojs/taro-qq/index.js').default.createComponent(CardItem));
+Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(CardItem));

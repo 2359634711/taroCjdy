@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -21,6 +21,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var pinImg = "/res/icon/pin.png";
 
 var MapItem = (_temp2 = _class = function (_BaseComponent) {
   _inherits(MapItem, _BaseComponent);
@@ -36,7 +38,7 @@ var MapItem = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MapItem.__proto__ || Object.getPrototypeOf(MapItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MapItem.__proto__ || Object.getPrototypeOf(MapItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["markers", "latitude", "longitude", "markList"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(MapItem, [{
@@ -46,6 +48,15 @@ var MapItem = (_temp2 = _class = function (_BaseComponent) {
       this.$$refs = [];
     }
   }, {
+    key: "markertap",
+    value: function markertap(e) {
+      console.log(e);
+      this.props.onAction({
+        type: 'onMarkerTap',
+        data: e
+      });
+    }
+  }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
@@ -53,13 +64,67 @@ var MapItem = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      Object.assign(this.__state, {});
+
+      var markList = this.__props.markList;
+
+      var markers = markList.map(function (val) {
+        return {
+          latitude: val.latitude,
+          longitude: val.longitude,
+          iconPath: pinImg,
+          height: 30,
+          width: 30,
+          id: Number(val.id),
+          callout: {
+            content: val.title + '\n点击查看详情' || '',
+            fontSize: 12,
+            borderRadius: 5,
+            padding: 10,
+            display: 'ALWAYS',
+            textAlign: 'center',
+            color: '#1c1c1c',
+            borderWidth: 1,
+            bgColor: '#ffffff',
+            borderColor: '#fffff'
+          }
+        };
+      });
+      var latitude = 0;
+      var longitude = 0;
+      switch (markers.length) {
+        case 0:
+          {
+            latitude = 46.592136;
+            longitude = 125.153431;
+            break;
+          }
+        case 1:
+          {
+            latitude = markers[0].latitude;
+            longitude = markers[0].longitude;
+            break;
+          }
+        default:
+          {
+            break;
+          }
+      }
+      Object.assign(this.__state, {
+        markers: markers,
+        latitude: latitude,
+        longitude: longitude
+      });
       return this.__state;
     }
   }]);
 
   return MapItem;
-}(_index.Component), _class.$$events = [], _class.$$componentPath = "components/MapItem/MapItem", _temp2);
+}(_index.Component), _class.$$events = ["markertap"], _class.$$componentPath = "components/MapItem/MapItem", _temp2);
+
+
+MapItem.defaultProps = {
+  markList: []
+};
 exports.default = MapItem;
 
-Component(require('../../npm/@tarojs/taro-qq/index.js').default.createComponent(MapItem));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(MapItem));

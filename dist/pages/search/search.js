@@ -10,9 +10,11 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
+
+var _api = require("../../utils/api.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,31 +38,115 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
+      navigationBarTitleText: '搜索'
+    }, _this.$usedState = ["loopArray1", "$compid__4", "goodsList"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Search, [{
     key: "_constructor",
     value: function _constructor(props) {
       _get(Search.prototype.__proto__ || Object.getPrototypeOf(Search.prototype), "_constructor", this).call(this, props);
-
+      this.state = {
+        goodsList: []
+      };
       this.$$refs = [];
+    }
+  }, {
+    key: "subSearch",
+    value: function subSearch(keywords) {
+      var _this2 = this;
+
+      if (!keywords) {
+        _index2.default.showToast({
+          title: "请输入搜索内容",
+          icon: "none",
+          duration: 800
+        });
+      } else {
+        (0, _api.searchGoods)({ keywords: keywords }).then(function (res) {
+          console.log(res);
+          var goodsList = [];
+          if (res.err) {
+            _index2.default.showToast({
+              title: '数据空',
+              icon: 'none',
+              duration: 800
+            });
+            return;
+          } else {
+            goodsList = res.data.data;
+          }
+          _this2.setState({
+            goodsList: goodsList
+          });
+        });
+      }
+    }
+  }, {
+    key: "onSearchAction",
+    value: function onSearchAction(e) {
+      console.log(e);
+      if (e.type == 'onSub') {
+        this.subSearch(e.data.keywords);
+      }
+    }
+  }, {
+    key: "onGoodsItemClick",
+    value: function onGoodsItemClick(e) {
+      if (e.type == 'onItemClick') {
+        _index2.default.redirectTo({
+          url: '/pages/index/index?goodsid=' + e.data.id
+        });
+      }
     }
   }, {
     key: "_createData",
     value: function _createData() {
+      var _this3 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      Object.assign(this.__state, {});
+      var $compid__4 = (0, _index.genCompid)(__prefix + "$compid__4");
+
+      var goodsList = this.__state.goodsList;
+
+      var loopArray1 = goodsList.map(function (val, _anonIdx) {
+        val = {
+          $original: (0, _index.internal_get_original)(val)
+        };
+        var $compid__3 = (0, _index.genCompid)(__prefix + "TzWuJOcAjE" + _anonIdx);
+        _index.propsManager.set({
+          "onAction": _this3.onGoodsItemClick.bind(_this3),
+          "goodsInfo": val.$original
+        }, $compid__3);
+        return {
+          $compid__3: $compid__3,
+          $original: val.$original
+        };
+      });
+      _index.propsManager.set({
+        "onAction": this.onSearchAction.bind(this)
+      }, $compid__4);
+      Object.assign(this.__state, {
+        loopArray1: loopArray1,
+        $compid__4: $compid__4
+      });
       return this.__state;
     }
   }]);
 
   return Search;
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/search/search", _temp2);
+
+
+Search.defaultProps = {
+  goodsList: []
+};
+Search.config = { navigationBarTitleText: '搜索' };
 exports.default = Search;
 
-Component(require('../../npm/@tarojs/taro-qq/index.js').default.createComponent(Search, true));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Search, true));

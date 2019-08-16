@@ -57,7 +57,7 @@ export default class Detail extends Component<IProps, IState>{
                 bannerList: goodsInfo.banner_list,
                 referInfo,
                 infoBox,
-                richNode: goodsInfo.rich.rich_node
+                richNode: goodsInfo.rich?goodsInfo.rich.rich_node:''
 
             }, () => {
                 console.log(this.state)

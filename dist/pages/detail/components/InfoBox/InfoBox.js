@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../../../npm/@tarojs/taro-qq/index.js");
+var _index = require("../../../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -57,6 +57,14 @@ var InfoBox = (_temp2 = _class = function (_BaseComponent) {
 
       var infoBox = this.__props.infoBox;
 
+
+      this.anonymousFunc0 = function () {
+        _index2.default.openLocation({
+          latitude: Number(infoBox.latitude),
+          longitude: Number(infoBox.longitude)
+        });
+      };
+
       var anonymousState__temp = "/res/icon/daohang.png";
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
@@ -64,10 +72,15 @@ var InfoBox = (_temp2 = _class = function (_BaseComponent) {
       });
       return this.__state;
     }
+  }, {
+    key: "anonymousFunc0",
+    value: function anonymousFunc0(e) {
+      ;
+    }
   }]);
 
   return InfoBox;
-}(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/detail/components/InfoBox/InfoBox", _temp2);
+}(_index.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/detail/components/InfoBox/InfoBox", _temp2);
 exports.default = InfoBox;
 
-Component(require('../../../../npm/@tarojs/taro-qq/index.js').default.createComponent(InfoBox));
+Component(require('../../../../npm/@tarojs/taro-weapp/index.js').default.createComponent(InfoBox));
