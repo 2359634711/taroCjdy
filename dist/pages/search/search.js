@@ -118,7 +118,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
-        var $compid__3 = (0, _index.genCompid)(__prefix + "TzWuJOcAjE" + _anonIdx);
+        var $compid__3 = (0, _index.genCompid)(__prefix + "fHCGqUTuwi" + _anonIdx);
         _index.propsManager.set({
           "onAction": _this3.onGoodsItemClick.bind(_this3),
           "goodsInfo": val.$original

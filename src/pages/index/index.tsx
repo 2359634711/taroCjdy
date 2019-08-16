@@ -5,6 +5,7 @@ import MainBox from './components/MainBox/MainBox'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import CardItem, { ICardInfo } from './components/CardItem/CardItem'
 import { getGoodsTitle, getGoodsDetail } from '../../utils/api'
+import NavBottom from '../../components/NavBottom/NavBottom'
 
 interface IState {
   sceenHeight: number,
@@ -55,6 +56,7 @@ export default class Index extends Component<any, IState> {
       showType: 0
     })
     let goodsid = this.$router.params.goodsid
+    this.$router.params.goodsid = ''
     if (goodsid) {
       this.showMapMarkerFromGoodsid(goodsid)
     }
@@ -74,7 +76,6 @@ export default class Index extends Component<any, IState> {
   }
   onSearchBarAction(e) {
     if (e.type == 'open') {
-      console.log('open')
       this.setState({
         showType: this.state.showType == 1 ? 0 : 1
       })
@@ -122,6 +123,8 @@ export default class Index extends Component<any, IState> {
           ))}
 
         </MainBox>
+
+        <NavBottom showType={showType} selectedIndex={0} />
       </View>
     )
   }
