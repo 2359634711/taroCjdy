@@ -1,0 +1,50 @@
+.navTitle {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100px;
+}
+.scroll {
+  width: 100%;
+  height: 100%;
+}
+.navTitleBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  background: #ffffff;
+}
+.navItem {
+  margin-left: 40px;
+  font-size: 32px;
+  transition: all 0.3s;
+  color: #999;
+}
+.navItem::after {
+  position: absolute;
+  content: "";
+  bottom: -20px;
+  height: 10px;
+  width: 0;
+  left: 0;
+  background: #1296db;
+  border-radius: 20px;
+}
+.navItemActive {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1296db;
+  position: relative;
+  margin-bottom: 35px;
+}
+.navItemActive::after {
+  position: absolute;
+  content: "";
+  bottom: -20px;
+  height: 10px;
+  width: 100%;
+  left: 0;
+  background: #1296db;
+  border-radius: 20px;
+}

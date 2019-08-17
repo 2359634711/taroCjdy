@@ -1,4 +1,4 @@
-import { Component } from "@tarojs/taro";
+import Taro, { Component } from "@tarojs/taro";
 import { View, Image } from "@tarojs/components";
 import './NavBottom.scss'
 
@@ -21,24 +21,31 @@ export default class NavBottom extends Component<IProps, any> {
             id: 0,
             title: '首页',
             img: homeImg,
-            imgActive: homeImgActive
+            imgActive: homeImgActive,
+            url: '/pages/index/index'
         }, {
             id: 1,
             title: '分类',
             img: classImg,
-            imgActive: classImgActive
+            imgActive: classImgActive,
+            url: '/pages/class/class'
         }, {
             id: 2,
             title: '我的',
             img: userImg,
-            imgActive: userImgActive
+            imgActive: userImgActive,
+            url: '/pages/user/user'
         }]
         return (
             <View className={'navBack ' + (showType == 0 ? 'navHidden' : '')}>
 
                 <View className='navBottom'>
                     {navBottom.map(val => (
-                        <View key={val.id} className={'navItem ' + (val.id == selectedIndex ? 'active' : '')}>
+                        <View onClick={() => {
+                            Taro.redirectTo({
+                                url: val.url
+                            })
+                        }} key={val.id} className={'navItem ' + (val.id == selectedIndex ? 'active' : '')}>
                             <Image src={val.id == selectedIndex ? val.imgActive : val.img}></Image>
                             <View className='title'>{val.title}</View>
                         </View>

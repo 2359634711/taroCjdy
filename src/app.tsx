@@ -22,7 +22,9 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/search/search',
-      'pages/detail/detail'
+      'pages/detail/detail',
+      'pages/class/class',
+      'pages/user/user'
     ],
     window: {
       backgroundTextStyle: 'light',
