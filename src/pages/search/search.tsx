@@ -2,7 +2,7 @@ import Taro, { Component } from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import SearchBox from './components/SearchBox/SearchBox'
 import { searchGoods } from '../../utils/api'
-import GoodsItem, { IGoodsInfo } from './components/GoodsItem/GoodsItem'
+import GoodsItem, { IGoodsInfo } from '../../components/GoodsItem/GoodsItem'
 import './search.scss'
 interface IState {
     goodsList: IGoodsInfo[]

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.searchGoods = exports.getGoodsDetail = exports.getGoodsTitle = undefined;
+exports.getClass = exports.getGoodsFromClass = exports.searchGoods = exports.getGoodsDetail = exports.getGoodsTitle = undefined;
 
 var _index = require('../npm/@tarojs/taro-weapp/index.js');
 
@@ -11,6 +11,7 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// const serverUri = 'http://127.0.0.1:8081/'
 var serverUri = 'https://nepu.fun:8081/';
 var header = {
   'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -36,4 +37,10 @@ var getGoodsDetail = exports.getGoodsDetail = function getGoodsDetail(data) {
 };
 var searchGoods = exports.searchGoods = function searchGoods(data) {
   return request('searchGoods', data);
+};
+var getGoodsFromClass = exports.getGoodsFromClass = function getGoodsFromClass(data) {
+  return request('getGoodsFromClass', data);
+};
+var getClass = exports.getClass = function getClass() {
+  return request('getClass');
 };

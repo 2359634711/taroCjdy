@@ -40,7 +40,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '搜索'
-    }, _this.$usedState = ["loopArray11", "$compid__26", "goodsList"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["loopArray10", "$compid__40", "goodsList"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Search, [{
@@ -110,30 +110,30 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__26 = (0, _index.genCompid)(__prefix + "$compid__26");
+      var $compid__40 = (0, _index.genCompid)(__prefix + "$compid__40");
 
       var goodsList = this.__state.goodsList;
 
-      var loopArray11 = goodsList.map(function (val, _anonIdx) {
+      var loopArray10 = goodsList.map(function (val, _anonIdx) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
-        var $compid__25 = (0, _index.genCompid)(__prefix + "jTIWYHZQUt" + _anonIdx);
+        var $compid__39 = (0, _index.genCompid)(__prefix + "yTcBGXbQkd" + _anonIdx);
         _index.propsManager.set({
           "onAction": _this3.onGoodsItemClick.bind(_this3),
           "goodsInfo": val.$original
-        }, $compid__25);
+        }, $compid__39);
         return {
-          $compid__25: $compid__25,
+          $compid__39: $compid__39,
           $original: val.$original
         };
       });
       _index.propsManager.set({
         "onAction": this.onSearchAction.bind(this)
-      }, $compid__26);
+      }, $compid__40);
       Object.assign(this.__state, {
-        loopArray11: loopArray11,
-        $compid__26: $compid__26
+        loopArray10: loopArray10,
+        $compid__40: $compid__40
       });
       return this.__state;
     }

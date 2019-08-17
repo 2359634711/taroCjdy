@@ -39,7 +39,7 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__27", "$compid__28", "$compid__29", "bannerList", "referInfo", "infoBox", "richNode"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__6", "$compid__7", "$compid__8", "bannerList", "referInfo", "infoBox", "richNode"], _this.config = {
       navigationBarTitleText: '详情'
     }, _this.customComponents = ["InfoBox", "ReferBox", "RichDetail"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -103,9 +103,9 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__27 = (0, _index.genCompid)(__prefix + "$compid__27");
-      var $compid__28 = (0, _index.genCompid)(__prefix + "$compid__28");
-      var $compid__29 = (0, _index.genCompid)(__prefix + "$compid__29");
+      var $compid__6 = (0, _index.genCompid)(__prefix + "$compid__6");
+      var $compid__7 = (0, _index.genCompid)(__prefix + "$compid__7");
+      var $compid__8 = (0, _index.genCompid)(__prefix + "$compid__8");
 
       var bannerList = this.__state.bannerList;
       var referInfo = this.__state.referInfo;
@@ -114,17 +114,17 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
 
       _index.propsManager.set({
         "infoBox": infoBox
-      }, $compid__27);
+      }, $compid__6);
       _index.propsManager.set({
         "referInfo": referInfo
-      }, $compid__28);
+      }, $compid__7);
       _index.propsManager.set({
         "node": richNode
-      }, $compid__29);
+      }, $compid__8);
       Object.assign(this.__state, {
-        $compid__27: $compid__27,
-        $compid__28: $compid__28,
-        $compid__29: $compid__29
+        $compid__6: $compid__6,
+        $compid__7: $compid__7,
+        $compid__8: $compid__8
       });
       return this.__state;
     }
