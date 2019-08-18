@@ -18,6 +18,7 @@ const request = (type, data?) => {
     })
 }
 
+export const version = '1.1.0'
 
 export const getGoodsTitle = () => (request('getGoodsTitle'))
 export const getGoodsDetail = (data) => (request('getGoods', data))

@@ -1,4 +1,4 @@
-import Taro, { Component } from "@tarojs/taro";
+import Taro, { Component, Config } from "@tarojs/taro";
 import { View, Image } from "@tarojs/components";
 import NavBottom from '../../components/NavBottom/NavBottom'
 import InfoItem, { IInfoItem } from '../../components/InfoItem/InfoItem'
@@ -8,6 +8,9 @@ interface IState {
     infoList: IInfoItem[]
 }
 export default class user extends Component<any, IState>{
+    static config:Config = {
+        navigationBarTitleText: '我的'
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -15,17 +18,20 @@ export default class user extends Component<any, IState>{
                 id: 0,
                 title: '关于我们',
                 icon: '',
-                iconArr: imgRight
+                iconArr: imgRight,
+                url: '/pages/user/about'
             }, {
                 id: 0,
                 title: '设置',
                 icon: '',
-                iconArr: imgRight
+                iconArr: imgRight,
+                url: '/pages/user/setting'
             }, {
                 id: 0,
                 title: 'cookie协议',
                 icon: '',
-                iconArr: imgRight
+                iconArr: imgRight,
+                url: '/pages/user/cookie'
             }]
         }
     }
@@ -39,8 +45,11 @@ export default class user extends Component<any, IState>{
                 </View>
                 <View className='infoBox'>
                     {infoList.map(val => (
-                        <InfoItem onClick={() => {
+                        <InfoItem key={val.title} onClick={() => {
                             console.log(val)
+                            if(val.url){
+                                Taro.navigateTo({url: val.url})
+                            }
                         }} infoItem={val}></InfoItem>
                     ))}
                 </View>

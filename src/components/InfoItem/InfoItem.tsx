@@ -6,7 +6,8 @@ export interface IInfoItem {
     title: string,
     value?: string,
     icon?: string,
-    iconArr?: string
+    iconArr?: string,
+    url?:string
 }
 interface IProps {
     infoItem: IInfoItem,

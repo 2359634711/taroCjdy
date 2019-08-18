@@ -65,6 +65,14 @@
 					"id": -1,
 					"name": "pages/user/user",
 					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/setting",
+					"pathName": "pages/user/setting",
+					"query": "",
 					"scene": null
 				}
 			]

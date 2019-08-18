@@ -24,7 +24,11 @@ class App extends Component {
       'pages/search/search',
       'pages/detail/detail',
       'pages/class/class',
-      'pages/user/user'
+      'pages/user/user',
+      'pages/user/about',
+      'pages/user/cookie',
+      'pages/user/setting',
+      'pages/user/edition'
     ],
     window: {
       backgroundTextStyle: 'light',
