@@ -5,7 +5,8 @@ import '../../commonStyles/font.scss'
 
 interface IProps {
     showType: number,//0是浮动按钮 1是条形搜索框
-    onAction: Function
+    onAction: Function,
+    bar?: boolean
 }
 
 export default class SearchBar extends Component<IProps, any> {
@@ -45,8 +46,8 @@ export default class SearchBar extends Component<IProps, any> {
             <View className='title fontTitle'>搜索</View>
         )
         return (
-            <View className='searchBar' style={this.props.showType == 1 ? 'width: 100%;background:#fff;' : ''}>
-                {this.props.showType == 1 && title}
+            <View className='searchBar' style={this.props.showType == 1 ? 'width: 100%;background:#fff;' : ''+this.props.bar?'padding-top: 0px;':'padding-top: 180px;'}>
+                {(this.props.showType == 1 && !this.props.bar) && title}
                 {searchBar}
             </View>
         )

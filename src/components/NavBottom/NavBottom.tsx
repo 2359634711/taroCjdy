@@ -8,6 +8,8 @@ const classImg = require('../../res/icon/class.png')
 const classImgActive = require('../../res/icon/class_active.png')
 const userImg = require('../../res/icon/user.png')
 const userImgActive = require('../../res/icon/user_active.png')
+const groupActive = require('../../res/icon/groupActive.png')
+const group = require('../../res/icon/group.png')
 
 interface IProps {
     selectedIndex: number,
@@ -31,6 +33,12 @@ export default class NavBottom extends Component<IProps, any> {
             url: '/pages/class/class'
         }, {
             id: 2,
+            title: '社团',
+            img: group,
+            imgActive: groupActive,
+            url: '/pages/group/groupHome/groupHome'
+        }, {
+            id: 3,
             title: '我的',
             img: userImg,
             imgActive: userImgActive,

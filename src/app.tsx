@@ -1,6 +1,6 @@
-import Taro, { Component, Config } from '@tarojs/taro'
+import Taro, { Component, Config, setStorage } from '@tarojs/taro'
 import Index from './pages/index'
-
+import { getOpenId } from './utils/api'
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -24,7 +24,12 @@ class App extends Component {
       'pages/search/search',
       'pages/detail/detail',
       'pages/class/class',
-      'pages/user/user'
+      'pages/user/user',
+      'pages/user/about',
+      'pages/user/cookie',
+      'pages/user/setting',
+      'pages/user/edition',
+      'pages/group/groupHome/groupHome'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -34,7 +39,23 @@ class App extends Component {
     }
   }
 
-  componentDidMount() { }
+  componentDidMount() {
+    Taro.login({
+      success: (res) => {
+        // 换取openid
+        getOpenId({ code: res.code }).then((res: any) => {
+          setStorage({
+            key: 'openid',
+            data: res.data.openid
+          })
+          setStorage({
+            key: 'session_key',
+            data: res.data.session_key
+          })
+        })
+      }
+    })
+  }
 
   componentDidShow() { }
 

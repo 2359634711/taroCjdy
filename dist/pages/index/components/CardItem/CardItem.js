@@ -36,7 +36,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["cardInfo", "loopArray3", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CardItem.__proto__ || Object.getPrototypeOf(CardItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["cardInfo", "loopArray6", "onAction"], _this.anonymousFunc0Map = {}, _this.customComponents = ["InfoItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CardItem, [{
@@ -59,7 +59,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
 
       var cardInfo = this.__state.cardInfo;
 
-      var loopArray3 = cardInfo.list.map(function (val, __index0) {
+      var loopArray6 = cardInfo.list.map(function (val, __index0) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
@@ -70,7 +70,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           value: val.$original.info
         };
 
-        var _$indexKey = "mVWyO" + __index0;
+        var _$indexKey = "KidSx" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function (e) {
           _this2.__props.onAction({
@@ -79,21 +79,21 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           });
         };
 
-        var $compid__12 = (0, _index.genCompid)(__prefix + "koKlJrlmov" + __index0);
+        var $compid__15 = (0, _index.genCompid)(__prefix + "pzVdowtWgb" + __index0);
         _index.propsManager.set({
           "infoItem": infoItem,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)
-        }, $compid__12);
+        }, $compid__15);
         return {
           infoItem: infoItem,
           _$indexKey: _$indexKey,
-          $compid__12: $compid__12,
+          $compid__15: $compid__15,
           $original: val.$original
         };
       });
       Object.assign(this.__state, {
         cardInfo: cardInfo,
-        loopArray3: loopArray3
+        loopArray6: loopArray6
       });
       return this.__state;
     }

@@ -1,5 +1,6 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, ScrollView } from "@tarojs/components";
+import './NavTitle.scss'
 
 export interface INavTitleItem {
     id: number,
@@ -26,11 +27,9 @@ export default class NavTitle extends Component<IProps, IState> {
     render() {
         let { navTitleList } = this.props;
         let { selectedIndex } = this.props;
-        console.log(selectedIndex, navTitleList)
         return (
             <View className='navTitle'>
                 <ScrollView className='scroll' scrollX>
-                    <View className='navTitleBox'>
                         {navTitleList.map(val => (
                             <View onClick={() => {
                                 this.props.onAction({
@@ -41,7 +40,6 @@ export default class NavTitle extends Component<IProps, IState> {
                                 })
                             }} className={'navItem' + (selectedIndex == val.id ? ' navItemActive' : '')} key={val.title}>{val.title}</View>
                         ))}
-                    </View>
                 </ScrollView>
             </View >
         )

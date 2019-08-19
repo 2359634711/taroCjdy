@@ -36,7 +36,7 @@ var SearchBar = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["_$anonymousState__temp", "_$anonymousState__temp2", "anonymousState__temp3", "showType"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["_$anonymousState__temp", "_$anonymousState__temp2", "anonymousState__temp3", "showType", "bar"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(SearchBar, [{
@@ -85,7 +85,7 @@ var SearchBar = (_temp2 = _class = function (_BaseComponent) {
 
         _$anonymousState__temp2 = "/res/icon/search.png";
       }
-      var anonymousState__temp3 = (0, _index.internal_inline_style)(this.__props.showType == 1 ? 'width: 100%;background:#fff;' : '');
+      var anonymousState__temp3 = (0, _index.internal_inline_style)(this.__props.showType == 1 ? 'width: 100%;background:#fff;' : '' + this.__props.bar ? 'padding-top: 0px;' : 'padding-top: 180px;');
       Object.assign(this.__state, {
         _$anonymousState__temp: _$anonymousState__temp,
         _$anonymousState__temp2: _$anonymousState__temp2,
