@@ -40,7 +40,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '搜索'
-    }, _this.$usedState = ["loopArray35", "$compid__75", "goodsList"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["loopArray19", "$compid__50", "goodsList", "type"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Search, [{
@@ -48,7 +48,8 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
     value: function _constructor(props) {
       _get(Search.prototype.__proto__ || Object.getPrototypeOf(Search.prototype), "_constructor", this).call(this, props);
       this.state = {
-        goodsList: []
+        goodsList: [],
+        type: this.$router.params.type
       };
       this.$$refs = [];
     }
@@ -110,30 +111,30 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__75 = (0, _index.genCompid)(__prefix + "$compid__75");
+      var $compid__50 = (0, _index.genCompid)(__prefix + "$compid__50");
 
       var goodsList = this.__state.goodsList;
 
-      var loopArray35 = goodsList.map(function (val, _anonIdx) {
+      var loopArray19 = goodsList.map(function (val, _anonIdx) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
-        var $compid__74 = (0, _index.genCompid)(__prefix + "AtwJJizxrp" + _anonIdx);
+        var $compid__49 = (0, _index.genCompid)(__prefix + "DLGLqtVZZZ" + _anonIdx);
         _index.propsManager.set({
           "onAction": _this3.onGoodsItemClick.bind(_this3),
           "goodsInfo": val.$original
-        }, $compid__74);
+        }, $compid__49);
         return {
-          $compid__74: $compid__74,
+          $compid__49: $compid__49,
           $original: val.$original
         };
       });
       _index.propsManager.set({
         "onAction": this.onSearchAction.bind(this)
-      }, $compid__75);
+      }, $compid__50);
       Object.assign(this.__state, {
-        loopArray35: loopArray35,
-        $compid__75: $compid__75
+        loopArray19: loopArray19,
+        $compid__50: $compid__50
       });
       return this.__state;
     }

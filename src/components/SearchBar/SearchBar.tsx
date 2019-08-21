@@ -22,8 +22,8 @@ export default class SearchBar extends Component<IProps, any> {
                         })
                     }} src={require('../../res/icon/search.png')} ></Image>
                     <Input onClick={() => {
-                        Taro.navigateTo({
-                            url: '/pages/search/search'
+                        this.props.onAction({
+                            type: 'click'
                         })
                     }} placeholder='请输入搜索的内容'></Input>
                 </View>
@@ -46,7 +46,7 @@ export default class SearchBar extends Component<IProps, any> {
             <View className='title fontTitle'>搜索</View>
         )
         return (
-            <View className='searchBar' style={this.props.showType == 1 ? 'width: 100%;background:#fff;' : ''+this.props.bar?'padding-top: 0px;':'padding-top: 180px;'}>
+            <View className='searchBar' style={(this.props.showType == 1 ? 'width: 100%;background:#fff;' : '')+(this.props.bar?'padding-top: 20px;':'padding-top: 85px;')}>
                 {(this.props.showType == 1 && !this.props.bar) && title}
                 {searchBar}
             </View>

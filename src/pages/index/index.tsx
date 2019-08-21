@@ -80,6 +80,11 @@ export default class Index extends Component<any, IState> {
         showType: this.state.showType == 1 ? 0 : 1
       })
     }
+    if (e.type == 'click') {
+      Taro.navigateTo({
+        url: '/pages/search/search'
+      })
+    }
   }
   onCardAction(e) {
     Taro.pageScrollTo({
