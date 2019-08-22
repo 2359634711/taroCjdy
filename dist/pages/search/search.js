@@ -40,7 +40,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '搜索'
-    }, _this.$usedState = ["loopArray35", "$compid__75", "goodsList"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.$usedState = ["loopArray1", "$compid__5", "goodsList"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Search, [{
@@ -110,30 +110,30 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__75 = (0, _index.genCompid)(__prefix + "$compid__75");
+      var $compid__5 = (0, _index.genCompid)(__prefix + "$compid__5");
 
       var goodsList = this.__state.goodsList;
 
-      var loopArray35 = goodsList.map(function (val, _anonIdx) {
+      var loopArray1 = goodsList.map(function (val, _anonIdx) {
         val = {
           $original: (0, _index.internal_get_original)(val)
         };
-        var $compid__74 = (0, _index.genCompid)(__prefix + "AtwJJizxrp" + _anonIdx);
+        var $compid__4 = (0, _index.genCompid)(__prefix + "AEoyMhmnLB" + _anonIdx);
         _index.propsManager.set({
           "onAction": _this3.onGoodsItemClick.bind(_this3),
           "goodsInfo": val.$original
-        }, $compid__74);
+        }, $compid__4);
         return {
-          $compid__74: $compid__74,
+          $compid__4: $compid__4,
           $original: val.$original
         };
       });
       _index.propsManager.set({
         "onAction": this.onSearchAction.bind(this)
-      }, $compid__75);
+      }, $compid__5);
       Object.assign(this.__state, {
-        loopArray35: loopArray35,
-        $compid__75: $compid__75
+        loopArray1: loopArray1,
+        $compid__5: $compid__5
       });
       return this.__state;
     }
