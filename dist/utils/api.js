@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getUserInfo = exports.auth = exports.getOpenId = exports.getClass = exports.getGoodsFromClass = exports.searchGoods = exports.getGoodsDetail = exports.getGoodsTitle = exports.version = undefined;
+exports.getGroupFromId = exports.getGroupAll = exports.getUserInfo = exports.auth = exports.getOpenId = exports.getClass = exports.getGoodsFromClass = exports.searchGoods = exports.getGoodsDetail = exports.getGoodsTitle = exports.version = undefined;
 
 var _index = require('../npm/@tarojs/taro-weapp/index.js');
 
@@ -29,7 +29,7 @@ var request = function request(type, data) {
     });
   });
 };
-var version = exports.version = '1.2.0';
+var version = exports.version = '1.3.0';
 var getGoodsTitle = exports.getGoodsTitle = function getGoodsTitle() {
   return request('getGoodsTitle');
 };
@@ -53,4 +53,10 @@ var auth = exports.auth = function auth(data) {
 };
 var getUserInfo = exports.getUserInfo = function getUserInfo() {
   return request('getUserInfo');
+};
+var getGroupAll = exports.getGroupAll = function getGroupAll() {
+  return request('getGroupAll');
+};
+var getGroupFromId = exports.getGroupFromId = function getGroupFromId(data) {
+  return request('getGroupFromId', data);
 };

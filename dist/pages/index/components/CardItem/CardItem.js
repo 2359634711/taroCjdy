@@ -70,7 +70,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           value: val.$original.info
         };
 
-        var _$indexKey = "WUPst" + __index0;
+        var _$indexKey = "TKcJu" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function (e) {
           _this2.__props.onAction({
@@ -79,7 +79,7 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           });
         };
 
-        var $compid__17 = (0, _index.genCompid)(__prefix + "sUbPugOGrn" + __index0);
+        var $compid__17 = (0, _index.genCompid)(__prefix + "xlGRfOwtrI" + __index0);
         _index.propsManager.set({
           "infoItem": infoItem,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)

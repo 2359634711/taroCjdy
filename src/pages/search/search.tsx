@@ -5,7 +5,8 @@ import { searchGoods } from '../../utils/api'
 import GoodsItem, { IGoodsInfo } from '../../components/GoodsItem/GoodsItem'
 import './search.scss'
 interface IState {
-    goodsList: IGoodsInfo[]
+    goodsList: IGoodsInfo[],
+    type?: string
 }
 
 export default class Search extends Component<any, IState> {
@@ -15,13 +16,13 @@ export default class Search extends Component<any, IState> {
     constructor(props) {
         super(props);
         this.state = {
-            goodsList: []
+            goodsList: [],
+            type: this.$router.params.type
         }
     }
     static config = {
         navigationBarTitleText: '搜索'
     }
-
 
     subSearch(keywords) {
         if (!keywords) {
@@ -59,7 +60,7 @@ export default class Search extends Component<any, IState> {
     onGoodsItemClick(e) {
         if (e.type == 'onItemClick') {
             Taro.redirectTo({
-                url: '/pages/index/index?goodsid='+e.data.id
+                url: '/pages/index/index?goodsid=' + e.data.id
             })
         }
     }

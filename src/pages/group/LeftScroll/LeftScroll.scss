@@ -1,0 +1,27 @@
+.leftScroll {
+  width: 200px;
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  background: #fff;
+}
+.navItem {
+  font-size: 28px;
+  padding: 0 0px;
+  text-align: center;
+  transition: all 0.5s;
+}
+.active {
+//   background: #1296db;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.floatBlock {
+  background: #1296db;
+  position: absolute;
+  height: 80px;
+  width: 200px;
+  z-index: 1;
+  transition: all 0.1s;
+}

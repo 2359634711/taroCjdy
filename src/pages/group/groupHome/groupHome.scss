@@ -1,0 +1,67 @@
+.navTitle {
+  margin-top: 130px;
+}
+page {
+  background: #f5f5f5;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.mainBottom {
+  flex-grow: 1;
+  margin-bottom: 140px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.rightBox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+.leftBox{
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  width: 200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.groupItem {
+  margin: 20px;
+  width: calc(33.33% - 40px);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.groupItem Image{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.title{
+  font-size: 24px;
+  color: #999;
+  margin-top: 20px;
+
+}

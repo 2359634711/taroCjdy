@@ -18,7 +18,7 @@ const request = (type, data?) => {
     })
 }
 
-export const version = '1.2.0'
+export const version = '1.3.0'
 
 export const getGoodsTitle = () => (request('getGoodsTitle'))
 export const getGoodsDetail = (data) => (request('getGoods', data))
@@ -28,3 +28,5 @@ export const getClass = () => request('getClass')
 export const getOpenId = data => request('getOpenId', data)
 export const auth = data => request('auth', data)
 export const getUserInfo = () => request('getUserInfo')
+export const getGroupAll = () => request('getGroupAll')
+export const getGroupFromId = data => request('getGroupFromId', data)

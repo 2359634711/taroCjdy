@@ -52,7 +52,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -73,6 +73,12 @@
 					"name": "pages/user/setting",
 					"pathName": "pages/user/setting",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/group/groupHome/groupHome",
+					"pathName": "pages/group/groupHome/groupHome",
 					"scene": null
 				}
 			]

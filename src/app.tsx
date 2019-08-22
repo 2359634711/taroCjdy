@@ -29,7 +29,8 @@ class App extends Component {
       'pages/user/cookie',
       'pages/user/setting',
       'pages/user/edition',
-      'pages/group/groupHome/groupHome'
+      'pages/group/groupHome/groupHome',
+      'pages/group/groupDetail/groupDetail'
     ],
     window: {
       backgroundTextStyle: 'light',
