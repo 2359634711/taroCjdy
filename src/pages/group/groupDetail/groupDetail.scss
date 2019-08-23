@@ -11,6 +11,7 @@
     width: 100%;
     z-index: -1;
     border-radius: 0 0 100px 100px;
+    box-shadow: 0 0 30px 0 #1296db;
 }
 .avatar {
     margin-top: 100px;
@@ -23,6 +24,17 @@
     border-radius: 20px;
     margin: 10px;
     overflow: hidden;
+    box-shadow: 0 0 30px 0 #ccc;
+}
+.btn{
+  color: #fff;
+  border-radius: 10px;
+  font-size: 28px;
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  border: 1px solid #fff;
+  padding: 5px 10px;
 }
 .image{
     width: 100%;
@@ -36,4 +48,11 @@
 .info {
   font-size: 24px;
   color: #666;
+}
+.infoItemBox{
+  margin-top: 20px;
+}
+
+page{
+  background: #f5f5f5;
 }

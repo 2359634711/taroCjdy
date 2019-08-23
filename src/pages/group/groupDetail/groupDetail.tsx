@@ -1,20 +1,39 @@
 import { Component, Config } from "@tarojs/taro";
 import { View, Image, Swiper, SwiperItem } from "@tarojs/components";
 import { getGroupFromId } from '../../../utils/api'
+import InfoItem, { IInfoItem } from '../../../components/InfoItem/InfoItem'
 import './groupDetail.scss'
-
+const iconArr = require('../../../res/icon/right.png')
 interface IProps {
     groupInfo: any
 }
-export default class groupDetail extends Component<IProps, any> {
-    static config:Config = {
+interface IState {
+    groupInfo: any,
+    infoList: IInfoItem[]
+}
+export default class groupDetail extends Component<IProps, IState> {
+    static config: Config = {
         navigationBarBackgroundColor: '#1296db',
         navigationBarTextStyle: 'white'
     }
     constructor(props) {
         super(props);
         this.state = {
-            groupInfo: {}
+            groupInfo: {},
+            infoList: [{
+                id: 0,
+                title: '社团规模',
+                value: '40人',
+                iconArr
+            }, {
+                id: 1,
+                title: '部门',
+                iconArr
+            }, {
+                id: 2,
+                title: '活动',
+                iconArr
+            }]
         }
     }
     componentWillMount() {
@@ -28,23 +47,30 @@ export default class groupDetail extends Component<IProps, any> {
         })
     }
     render() {
-        let { groupInfo } = this.state;
+        let { groupInfo, infoList } = this.state;
         return (
             <View>
-                <View className='topBack'></View>
+                <View className='topBack'>
+                    {/* <View className='btn'>申请加入</View> */}
+                </View>
                 <View className='infoBox'>
-                    <Image className='avatar' src={groupInfo.avatar}></Image>
+                    <Image mode='aspectFill' className='avatar' src={groupInfo.avatar}></Image>
                     <View className='title'>{groupInfo.title}</View>
                     <View className='info'>{groupInfo.info}</View>
                 </View>
 
                 <Swiper className='swiper' autoplay circular>
                     {groupInfo.banner_list.map(val => (
-                        <SwiperItem>
+                        <SwiperItem key={val}>
                             <Image className='image' mode='widthFix' src={val}></Image>
                         </SwiperItem>
                     ))}
                 </Swiper>
+                <View className='infoItemBox'>
+                    {infoList.map(val => (
+                        <InfoItem key={val.id} infoItem={val}></InfoItem>
+                    ))}
+                </View>
 
             </View>
         )
