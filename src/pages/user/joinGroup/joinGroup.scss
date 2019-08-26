@@ -1,0 +1,58 @@
+.formBox {
+  display: flex;
+  flex-direction: column;
+  color: #1c1c1c;
+  font-size: 28px;
+}
+
+.inputItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.title {
+  width: 110px;
+  margin-right: 20px;
+  text-align: right;
+}
+page {
+  background: #f5f5f5;
+}
+.inputVaule {
+  flex-grow: 1;
+}
+
+textarea {
+  background: #f5f5f5;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.btn::after {
+  border: 0;
+  border-radius: 0;
+}
+.btn {
+  padding: 0;
+}
+.button-hover {
+  background: #f5f5f5;
+}
+
+.btn {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  margin: 20px 0 20px 0;
+  background: #1296db;
+  border-radius: 300px;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 36px;
+  margin-top: 20px;
+}

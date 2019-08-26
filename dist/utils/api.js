@@ -1,1 +1,65 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getGroupFromId=exports.getGroupAll=exports.getUserInfo=exports.auth=exports.getOpenId=exports.getClass=exports.getGoodsFromClass=exports.searchGoods=exports.getGoodsDetail=exports.getGoodsTitle=exports.version=void 0;var _index=require("../npm/@tarojs/taro-weapp/index.js"),_index2=_interopRequireDefault(_index);function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}var serverUri="https://nepu.fun:8081/",header={"Content-Type":"application/x-www-form-urlencoded;charset=utf-8"},request=function(e,r){return new Promise(function(t){_index2.default.request({url:serverUri+e+"?openid="+((0,_index.getStorageSync)("openid")||""),data:r,header:header,method:r?"POST":"GET",success:function(e){t(e)}})})},version=exports.version="1.3.0",getGoodsTitle=exports.getGoodsTitle=function(){return request("getGoodsTitle")},getGoodsDetail=exports.getGoodsDetail=function(e){return request("getGoods",e)},searchGoods=exports.searchGoods=function(e){return request("searchGoods",e)},getGoodsFromClass=exports.getGoodsFromClass=function(e){return request("getGoodsFromClass",e)},getClass=exports.getClass=function(){return request("getClass")},getOpenId=exports.getOpenId=function(e){return request("getOpenId",e)},auth=exports.auth=function(e){return request("auth",e)},getUserInfo=exports.getUserInfo=function(){return request("getUserInfo")},getGroupAll=exports.getGroupAll=function(){return request("getGroupAll")},getGroupFromId=exports.getGroupFromId=function(e){return request("getGroupFromId",e)};
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.aplyGroup = exports.getGroupFromId = exports.getGroupAll = exports.getUserInfo = exports.auth = exports.getOpenId = exports.getClass = exports.getGoodsFromClass = exports.searchGoods = exports.getGoodsDetail = exports.getGoodsTitle = exports.version = undefined;
+
+var _index = require('../npm/@tarojs/taro-weapp/index.js');
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// const serverUri = 'http://127.0.0.1:8081/'
+var serverUri = 'https://nepu.fun:8081/';
+var header = {
+  'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+};
+var request = function request(type, data) {
+  return new Promise(function (resolve) {
+    _index2.default.request({
+      url: serverUri + type + '?openid=' + ((0, _index.getStorageSync)('openid') || ""),
+      data: data,
+      header: header,
+      method: data ? 'POST' : 'GET',
+      success: function success(res) {
+        resolve(res);
+      }
+    });
+  });
+};
+var version = exports.version = '1.3.0';
+var getGoodsTitle = exports.getGoodsTitle = function getGoodsTitle() {
+  return request('getGoodsTitle');
+};
+var getGoodsDetail = exports.getGoodsDetail = function getGoodsDetail(data) {
+  return request('getGoods', data);
+};
+var searchGoods = exports.searchGoods = function searchGoods(data) {
+  return request('searchGoods', data);
+};
+var getGoodsFromClass = exports.getGoodsFromClass = function getGoodsFromClass(data) {
+  return request('getGoodsFromClass', data);
+};
+var getClass = exports.getClass = function getClass() {
+  return request('getClass');
+};
+var getOpenId = exports.getOpenId = function getOpenId(data) {
+  return request('getOpenId', data);
+};
+var auth = exports.auth = function auth(data) {
+  return request('auth', data);
+};
+var getUserInfo = exports.getUserInfo = function getUserInfo() {
+  return request('getUserInfo');
+};
+var getGroupAll = exports.getGroupAll = function getGroupAll() {
+  return request('getGroupAll');
+};
+var getGroupFromId = exports.getGroupFromId = function getGroupFromId(data) {
+  return request('getGroupFromId', data);
+};
+var aplyGroup = exports.aplyGroup = function aplyGroup(data) {
+  return request('aplyGroup', data);
+};

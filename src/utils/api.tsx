@@ -29,4 +29,5 @@ export const getOpenId = data => request('getOpenId', data)
 export const auth = data => request('auth', data)
 export const getUserInfo = () => request('getUserInfo')
 export const getGroupAll = () => request('getGroupAll')
-export const getGroupFromId = data => request('getGroupFromId', data)
+export const getGroupFromId = data => request('getGroupFromId', data),
+export const aplyGroup = data => request('aplyGroup', data)

@@ -43,7 +43,7 @@ export default class user extends Component<any, IState>{
         data.sessionKey = getStorageSync('session_key')
         if (data.encryptedData)
             auth(data).then((res: any) => {
-                if(res.data.err){
+                if (res.data.err) {
                     console.log(res.data.msg)
                 }
                 this.getUserInfo()
@@ -53,20 +53,29 @@ export default class user extends Component<any, IState>{
     componentWillMount() {
         this.getUserInfo()
     }
-    getUserInfo(){
+    getUserInfo() {
 
         getUserInfo().then((res: any) => {
             if (!res.data.err) {
-                let data = res.data.data
+                let data = res.data.data;
+
+                let groupInfoItem: IInfoItem = {
+                    title: data.group_id ? '我的社团' : '加入社团',
+                    iconArr: imgRight,
+                    id: 1,
+                    url:  data.group_id ?'/pages/': '/pages/user/joinGroup/joinGroup'
+                }
+
                 this.setState({
-                    userInfo: data
+                    userInfo: data,
+                    infoList: [...this.state.infoList, groupInfoItem]
                 })
             }
         })
     }
     render() {
         let { infoList } = this.state
-        let {userInfo} = this.state
+        let { userInfo } = this.state
         return (
             <View>
                 <View className='userBox'>
