@@ -1,1 +1,82 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _class,_temp2,_createClass=function(){function o(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}return function(t,e,n){return e&&o(t.prototype,e),n&&o(t,n),t}}(),_get=function t(e,n,o){null===e&&(e=Function.prototype);var r=Object.getOwnPropertyDescriptor(e,n);if(void 0===r){var s=Object.getPrototypeOf(e);return null===s?void 0:t(s,n,o)}if("value"in r)return r.value;var i=r.get;return void 0!==i?i.call(o):void 0},_index=require("../../npm/@tarojs/taro-weapp/index.js"),_index2=_interopRequireDefault(_index);function _interopRequireDefault(t){return t&&t.__esModule?t:{default:t}}function _classCallCheck(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function _possibleConstructorReturn(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function _inherits(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}var InfoItem=(_temp2=_class=function(){function i(){var t,e,n;_classCallCheck(this,i);for(var o=arguments.length,r=Array(o),s=0;s<o;s++)r[s]=arguments[s];return(e=n=_possibleConstructorReturn(this,(t=i.__proto__||Object.getPrototypeOf(i)).call.apply(t,[this].concat(r)))).$usedState=["infoItem"],n.customComponents=[],_possibleConstructorReturn(n,e)}return _inherits(i,_index.Component),_createClass(i,[{key:"_constructor",value:function(t){_get(i.prototype.__proto__||Object.getPrototypeOf(i.prototype),"_constructor",this).call(this,t),this.$$refs=[]}},{key:"_createData",value:function(t,e,n){var o=this;this.__state=t||this.state||{},this.__props=e||this.props||{};this.$prefix;var r=this.__props.infoItem;return this.anonymousFunc0=function(){return o.__props.onClick&&o.__props.onClick(r)},Object.assign(this.__state,{infoItem:r}),this.__state}},{key:"anonymousFunc0",value:function(t){}}]),i}(),_class.$$events=["anonymousFunc0"],_class.$$componentPath="components/InfoItem/InfoItem",_temp2);exports.default=InfoItem,Component(require("../../npm/@tarojs/taro-weapp/index.js").default.createComponent(InfoItem));
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _class, _temp2;
+
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var InfoItem = (_temp2 = _class = function (_BaseComponent) {
+  _inherits(InfoItem, _BaseComponent);
+
+  function InfoItem() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, InfoItem);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = InfoItem.__proto__ || Object.getPrototypeOf(InfoItem)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["infoItem"], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(InfoItem, [{
+    key: "_constructor",
+    value: function _constructor(props) {
+      _get(InfoItem.prototype.__proto__ || Object.getPrototypeOf(InfoItem.prototype), "_constructor", this).call(this, props);
+
+      this.$$refs = [];
+    }
+  }, {
+    key: "_createData",
+    value: function _createData() {
+      var _this2 = this;
+
+      this.__state = arguments[0] || this.state || {};
+      this.__props = arguments[1] || this.props || {};
+      var __isRunloopRef = arguments[2];
+      var __prefix = this.$prefix;
+      ;
+
+      var infoItem = this.__props.infoItem;
+
+      this.anonymousFunc0 = function () {
+        return _this2.__props.onClick && _this2.__props.onClick(infoItem);
+      };
+
+      Object.assign(this.__state, {
+        infoItem: infoItem
+      });
+      return this.__state;
+    }
+  }, {
+    key: "anonymousFunc0",
+    value: function anonymousFunc0(e) {
+      ;
+    }
+  }]);
+
+  return InfoItem;
+}(_index.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "components/InfoItem/InfoItem", _temp2);
+exports.default = InfoItem;
+
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(InfoItem));

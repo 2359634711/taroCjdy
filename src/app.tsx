@@ -30,7 +30,8 @@ class App extends Component {
       'pages/user/setting',
       'pages/user/edition',
       'pages/group/groupHome/groupHome',
-      'pages/group/groupDetail/groupDetail'
+      'pages/group/groupDetail/groupDetail',
+      'pages/group/groupDetail/qrPage/qrPage'
     ],
     window: {
       backgroundTextStyle: 'light',

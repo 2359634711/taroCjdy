@@ -1,9 +1,10 @@
-import { Component, Config } from "@tarojs/taro";
+import Taro, { Component, Config } from "@tarojs/taro";
 import { View, Image, Swiper, SwiperItem } from "@tarojs/components";
 import { getGroupFromId } from '../../../utils/api'
 import InfoItem, { IInfoItem } from '../../../components/InfoItem/InfoItem'
 import './groupDetail.scss'
 const iconArr = require('../../../res/icon/right.png')
+const qrCode = require('../../../res/icon/qrCode.png')
 interface IProps {
     groupInfo: any
 }
@@ -51,7 +52,9 @@ export default class groupDetail extends Component<IProps, IState> {
         return (
             <View>
                 <View className='topBack'>
-                    {/* <View className='btn'>申请加入</View> */}
+                    <Image onClick={() => {
+                        Taro.navigateTo({ url: 'qrPage/qrPage?groupId=' + this.state.groupInfo.id })
+                    }} src={qrCode} className='qrBtn'></Image>
                 </View>
                 <View className='infoBox'>
                     <Image mode='aspectFill' className='avatar' src={groupInfo.avatar}></Image>
@@ -62,7 +65,7 @@ export default class groupDetail extends Component<IProps, IState> {
                 <Swiper className='swiper' autoplay circular>
                     {groupInfo.banner_list.map(val => (
                         <SwiperItem key={val}>
-                            <Image className='image' mode='widthFix' src={val}></Image>
+                            <Image className='image' mode='aspectFill' src={val}></Image>
                         </SwiperItem>
                     ))}
                 </Swiper>
