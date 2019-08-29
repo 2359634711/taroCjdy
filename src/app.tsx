@@ -31,7 +31,12 @@ class App extends Component {
       'pages/user/edition',
       'pages/group/groupHome/groupHome',
       'pages/group/groupDetail/groupDetail',
+<<<<<<< HEAD
       'pages/group/groupDetail/qrPage/qrPage'
+=======
+      'pages/user/joinGroup/joinGroup',
+      'pages/user/myGroup/myGroup'
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
     ],
     window: {
       backgroundTextStyle: 'light',

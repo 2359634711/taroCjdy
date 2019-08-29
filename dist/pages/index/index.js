@@ -40,7 +40,11 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray35", "$compid__49", "$compid__50", "$compid__51", "goodTitle"], _this.config = {
+=======
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray0", "$compid__1", "$compid__2", "$compid__3", "goodTitle"], _this.config = {
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
       navigationBarTitleText: '首页',
       navigationStyle: 'custom'
     }, _this.customComponents = ["SearchBar", "MapItem", "MainBox", "CardItem", "NavBottom"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -161,9 +165,15 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+<<<<<<< HEAD
       var $compid__49 = (0, _index.genCompid)(__prefix + "$compid__49");
       var $compid__50 = (0, _index.genCompid)(__prefix + "$compid__50");
       var $compid__51 = (0, _index.genCompid)(__prefix + "$compid__51");
+=======
+      var $compid__1 = (0, _index.genCompid)(__prefix + "$compid__1");
+      var $compid__2 = (0, _index.genCompid)(__prefix + "$compid__2");
+      var $compid__3 = (0, _index.genCompid)(__prefix + "$compid__3");
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
 
       var goodTitle = this.__state.goodTitle;
 
@@ -184,6 +194,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         }
       };
 
+<<<<<<< HEAD
       var loopArray35 = goodTitle.map(function (val, _anonIdx) {
         val = {
           $original: (0, _index.internal_get_original)(val)
@@ -195,12 +206,26 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         }, $compid__48);
         return {
           $compid__48: $compid__48,
+=======
+      var loopArray0 = goodTitle.map(function (val, _anonIdx) {
+        val = {
+          $original: (0, _index.internal_get_original)(val)
+        };
+        var $compid__0 = (0, _index.genCompid)(__prefix + "YMqkJfpgCA" + _anonIdx);
+        _index.propsManager.set({
+          "cardInfo": val.$original,
+          "onAction": _this4.onCardAction.bind(_this4)
+        }, $compid__0);
+        return {
+          $compid__0: $compid__0,
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
           $original: val.$original
         };
       });
       _index.propsManager.set({
         "showType": showType,
         "onAction": this.anonymousFunc0
+<<<<<<< HEAD
       }, $compid__49);
       _index.propsManager.set({
         "onAction": this.anonymousFunc1,
@@ -215,6 +240,22 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         $compid__49: $compid__49,
         $compid__50: $compid__50,
         $compid__51: $compid__51,
+=======
+      }, $compid__1);
+      _index.propsManager.set({
+        "onAction": this.anonymousFunc1,
+        "markList": markList
+      }, $compid__2);
+      _index.propsManager.set({
+        "showType": showType,
+        "selectedIndex": 0
+      }, $compid__3);
+      Object.assign(this.__state, {
+        loopArray0: loopArray0,
+        $compid__1: $compid__1,
+        $compid__2: $compid__2,
+        $compid__3: $compid__3,
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
         goodTitle: goodTitle
       });
       return this.__state;

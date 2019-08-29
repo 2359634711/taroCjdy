@@ -3,7 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+<<<<<<< HEAD
 exports.getGroupQr = exports.getGroupFromId = exports.getGroupAll = exports.getUserInfo = exports.auth = exports.getOpenId = exports.getClass = exports.getGoodsFromClass = exports.searchGoods = exports.getGoodsDetail = exports.getGoodsTitle = exports.version = undefined;
+=======
+exports.aplyGroup = exports.getGroupFromId = exports.getGroupAll = exports.getUserInfo = exports.auth = exports.getOpenId = exports.getClass = exports.getGoodsFromClass = exports.searchGoods = exports.getGoodsDetail = exports.getGoodsTitle = exports.version = undefined;
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
 
 var _index = require('../npm/@tarojs/taro-weapp/index.js');
 
@@ -60,6 +64,11 @@ var getGroupAll = exports.getGroupAll = function getGroupAll() {
 var getGroupFromId = exports.getGroupFromId = function getGroupFromId(data) {
   return request('getGroupFromId', data);
 };
+<<<<<<< HEAD
 var getGroupQr = exports.getGroupQr = function getGroupQr(data) {
   return request('getQr', data);
+=======
+var aplyGroup = exports.aplyGroup = function aplyGroup(data) {
+  return request('aplyGroup', data);
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
 };

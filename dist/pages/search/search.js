@@ -40,7 +40,11 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
       navigationBarTitleText: '搜索'
+<<<<<<< HEAD
     }, _this.$usedState = ["loopArray36", "$compid__53", "goodsList", "type"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
+=======
+    }, _this.$usedState = ["loopArray1", "$compid__5", "goodsList", "type"], _this.customComponents = ["SearchBox", "GoodsItem"], _temp), _possibleConstructorReturn(_this, _ret);
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
   }
 
   _createClass(Search, [{
@@ -111,6 +115,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+<<<<<<< HEAD
       var $compid__53 = (0, _index.genCompid)(__prefix + "$compid__53");
 
       var goodsList = this.__state.goodsList;
@@ -126,15 +131,39 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
         }, $compid__52);
         return {
           $compid__52: $compid__52,
+=======
+      var $compid__5 = (0, _index.genCompid)(__prefix + "$compid__5");
+
+      var goodsList = this.__state.goodsList;
+
+      var loopArray1 = goodsList.map(function (val, _anonIdx) {
+        val = {
+          $original: (0, _index.internal_get_original)(val)
+        };
+        var $compid__4 = (0, _index.genCompid)(__prefix + "uMpSXSsTHd" + _anonIdx);
+        _index.propsManager.set({
+          "onAction": _this3.onGoodsItemClick.bind(_this3),
+          "goodsInfo": val.$original
+        }, $compid__4);
+        return {
+          $compid__4: $compid__4,
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
           $original: val.$original
         };
       });
       _index.propsManager.set({
         "onAction": this.onSearchAction.bind(this)
+<<<<<<< HEAD
       }, $compid__53);
       Object.assign(this.__state, {
         loopArray36: loopArray36,
         $compid__53: $compid__53
+=======
+      }, $compid__5);
+      Object.assign(this.__state, {
+        loopArray1: loopArray1,
+        $compid__5: $compid__5
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
       });
       return this.__state;
     }

@@ -70,7 +70,11 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           value: val.$original.info
         };
 
+<<<<<<< HEAD
         var _$indexKey = "vhNve" + __index0;
+=======
+        var _$indexKey = "fMPhr" + __index0;
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
 
         _this2.anonymousFunc0Map[_$indexKey] = function (e) {
           _this2.__props.onAction({
@@ -79,7 +83,11 @@ var CardItem = (_temp2 = _class = function (_BaseComponent) {
           });
         };
 
+<<<<<<< HEAD
         var $compid__20 = (0, _index.genCompid)(__prefix + "NCxZBggvnz" + __index0);
+=======
+        var $compid__20 = (0, _index.genCompid)(__prefix + "GnmUqRZKVs" + __index0);
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
         _index.propsManager.set({
           "infoItem": infoItem,
           "onClick": _this2.anonymousFunc0.bind(_this2, _$indexKey)

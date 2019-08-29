@@ -39,7 +39,11 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
+<<<<<<< HEAD
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__54", "$compid__55", "$compid__56", "bannerList", "referInfo", "infoBox", "richNode"], _this.config = {
+=======
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Detail.__proto__ || Object.getPrototypeOf(Detail)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__6", "$compid__7", "$compid__8", "bannerList", "referInfo", "infoBox", "richNode"], _this.config = {
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
       navigationBarTitleText: '详情'
     }, _this.customComponents = ["InfoBox", "ReferBox", "RichDetail"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -103,9 +107,15 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+<<<<<<< HEAD
       var $compid__54 = (0, _index.genCompid)(__prefix + "$compid__54");
       var $compid__55 = (0, _index.genCompid)(__prefix + "$compid__55");
       var $compid__56 = (0, _index.genCompid)(__prefix + "$compid__56");
+=======
+      var $compid__6 = (0, _index.genCompid)(__prefix + "$compid__6");
+      var $compid__7 = (0, _index.genCompid)(__prefix + "$compid__7");
+      var $compid__8 = (0, _index.genCompid)(__prefix + "$compid__8");
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
 
       var bannerList = this.__state.bannerList;
       var referInfo = this.__state.referInfo;
@@ -114,6 +124,7 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
 
       _index.propsManager.set({
         "infoBox": infoBox
+<<<<<<< HEAD
       }, $compid__54);
       _index.propsManager.set({
         "referInfo": referInfo
@@ -125,6 +136,19 @@ var Detail = (_temp2 = _class = function (_BaseComponent) {
         $compid__54: $compid__54,
         $compid__55: $compid__55,
         $compid__56: $compid__56
+=======
+      }, $compid__6);
+      _index.propsManager.set({
+        "referInfo": referInfo
+      }, $compid__7);
+      _index.propsManager.set({
+        "node": richNode
+      }, $compid__8);
+      Object.assign(this.__state, {
+        $compid__6: $compid__6,
+        $compid__7: $compid__7,
+        $compid__8: $compid__8
+>>>>>>> 19b0c7a597da9e0629d4948fe584b921d204b3aa
       });
       return this.__state;
     }
